@@ -4,6 +4,6 @@
 
 This is our amazing team
 
-* Haider
-* Böhm
-* Plakolb
+* Sophie Haider
+* Sophie Böhm
+* Elena Plakolb
