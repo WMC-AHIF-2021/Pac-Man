@@ -6,3 +6,4 @@ This is our amazing team
 
 * Haider
 * Böhm
+* Plakolb
