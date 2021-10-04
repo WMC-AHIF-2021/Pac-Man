@@ -1,4 +1,4 @@
-# Packman
+# Pac-Man
 
 ## Team
 
