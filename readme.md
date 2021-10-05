@@ -2,7 +2,7 @@
 
 ## Team
 
-This is our amazing team
+**This is our amazing team**
 
 * Sophie Haider
 * Sophie Böhm
