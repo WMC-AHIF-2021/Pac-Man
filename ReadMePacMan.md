@@ -1,4 +1,4 @@
-![A Pac-Man](PacMan3.jpg)
+![A Pac-Man](pacMan2.jpg)
 
 # Pac-Man
 The website shows the main things of Pac-Man and explains the rules. 
