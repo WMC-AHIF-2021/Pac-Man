@@ -1,9 +1,11 @@
-# Packman
+# Pac-Man
 
 ## Team
 
-This is our amazing team
+**This is our amazing team**
 
-* Haider
-* Böhm
-* Plakolb
+* Sophie Haider
+* Sophie Böhm
+* Elena Plakolb
+
+![Pac-Man](pacman.jpg)
