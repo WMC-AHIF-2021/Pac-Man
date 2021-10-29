@@ -1,0 +1,31 @@
+button:hover {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    letter-spacing: 5px;
+    background-color: black;
+    color: rgb(212, 175, 52);
+    border-radius: 8px;
+    border: 8px double rgb(161, 225, 236);
+}
+
+button {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    letter-spacing: 5px;
+    background-position: center center;
+    background-color: black;
+    color: rgb(212, 175, 52);
+    border-radius: 8px;
+    border: 8px double rgb(228, 74, 74);
+    width: 30%;
+    height: 70px;
+}
+
+.flex { 
+    display: flex; 
+    justify-content:center; 
+    align-items: center;
+}
+
