@@ -1,23 +1,8 @@
-button{
-    color:black;
-    background-color: white;
-    height: 40px;
-    width: 30%;
+.background {
+    background: #fff;
+     margin-left: 20%;
+     margin-right: 20%;
 }
-
-#whiteRow {
-    margin: 0;
-    padding: 0;
-    height: 40px;
-    width: 100%;
-    background-color:  rgb(228, 74, 74);
-    }
-
-    .background {
-        background: #fff;
-        margin-left: 20%;
-        margin-right: 20%;
-    }
 
     h1{
         margin-bottom: 100%;
@@ -26,3 +11,25 @@ button{
 body{
     font-family:Arial, Helvetica, sans-serif;
 }
+
+.btn-group button {
+    background-color: rgb(228, 74, 74);
+    border: 1px solid rgb(150, 49, 49);
+    color: black;
+    height: 40px;
+    width: 25%;
+    cursor: pointer;
+    float: left;
+}
+
+.bg {
+    background: black;
+}
+
+.bg2 {
+    background: #fff;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-indent: 50px;
+}
+  
