@@ -19,22 +19,6 @@ Risks:
 * that the game doesn't work 
 * that we are not able to finish it 
 
-## Goals:
-* creating our own version of Pac-Man
-* writing some informations about Pac-Man 
-
-## Enviormental Analystic, Risks and Showstoppers
-Audience Group:
-* the game should be for everyone 
-
-Technologies: 
-* dynic part: TypeScript
-* static part: HTML, CSS
-
-Risks: 
-* that the game doesn't work 
-* that we are not able to finish it 
-
 ## This is our Team:
 * Sophie Böhm
 * Sophie Haider
