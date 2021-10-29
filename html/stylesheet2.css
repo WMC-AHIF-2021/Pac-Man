@@ -13,9 +13,26 @@ body{
 }
 
 .btn-group button {
-    background-color: rgb(228, 74, 74);
-    border: 1px solid rgb(150, 49, 49);
-    color: black;
+    border-top: 8px double rgb(228, 74, 74);
+    border-bottom: 8px double rgb(228, 74, 74);
+    border-left: none;
+    border-right: none;
+    letter-spacing: 5px;
+    background-color: black;
+    color: rgb(212, 175, 52);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    height: 40px;
+    width: 25%;
+    cursor: pointer;
+    float: left;
+}
+
+.btn-group button:hover{
+    border: 8px double rgb(161, 225, 236);
+    background-color: black;
+    color: rgb(212, 175, 52);
+    letter-spacing: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     height: 40px;
     width: 25%;
     cursor: pointer;
