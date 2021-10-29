@@ -13,14 +13,15 @@ body{
 }
 
 .btn-group button {
-    border-top: 8px double rgb(228, 74, 74);
-    border-bottom: 8px double rgb(228, 74, 74);
+    border-top: 8px double rgb(223, 50, 50);
+    border-bottom: 8px double rgb(223, 50, 50);
     border-left: none;
     border-right: none;
     letter-spacing: 5px;
     background-color: black;
     color: rgb(212, 175, 52);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
     height: 40px;
     width: 25%;
     cursor: pointer;
