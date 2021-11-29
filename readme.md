@@ -3,7 +3,7 @@
 # Pac-Man
 The website shows the main things of Pac-Man. You can learn something about the history, like where it comes from, the time of developement and the main idea of Pac-Man. If you don't know Pac-Man, we will give you a short overwiev of the most important rules. Last but not least we also have a dynamic part, where you can play our own version of Pac-Man.   
 
-## Enviormental Analystic, Risks and Showstoppers
+## Audience Group, Technologies and Risks
 Audience Group:
 * the game should be for everyone 
 
@@ -35,4 +35,4 @@ Dynamic part:
 ## This is our Team:
 * Sophie Haider (Teamleader, Rules)
 * Sophie Böhm (Change of appearance)
-* Elena Plakolb (Histroy)
+* Elena Plakolb (History)
