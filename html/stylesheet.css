@@ -20,7 +20,7 @@ button {
     border-radius: 8px;
     border: 8px double rgb(223, 50, 50);
     width: 30%;
-    height: 70px;
+    height: 3em;
 }
 
 .flex { 
