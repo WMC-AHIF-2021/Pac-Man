@@ -5,7 +5,7 @@ button:hover {
     letter-spacing: 5px;
     background-color: black;
     color: rgb(212, 175, 52);
-    border-radius: 8px;
+    border-radius: 10px;
     border: 8px double rgb(161, 225, 236);
 }
 
@@ -17,7 +17,7 @@ button {
     background-position: center center;
     background-color: black;
     color: rgb(212, 175, 52);
-    border-radius: 8px;
+    border-radius: 10px;
     border: 8px double rgb(223, 50, 50);
     width: 30%;
     height: 3em;
