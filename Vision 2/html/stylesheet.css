@@ -1,0 +1,62 @@
+.btn-group button {
+    font-size: large;
+    height: 45px;
+    width: 25%;
+    cursor: pointer;
+    float: left;
+    background-color: white;
+    color: black;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    border-left: none;
+
+}
+
+.btn-group button:hover {
+    border-bottom: 5px solid black;
+    border-right: 1px solid rgb(206, 206, 206);
+    border-left: 1px solid rgb(206, 206, 206);
+    border-top: none;
+}
+
+
+article{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 150%;
+    margin: 2em;
+}
+
+body{
+    margin: 0em;
+}
+
+img.header{
+    width: 100%;
+    opacity: 25%;
+}
+
+img.level {
+    width: 10em;
+    margin-right: 1em;
+}
+
+img.ghosts {
+    width: 5em;
+    margin-right: 1em;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+td {
+    vertical-align: top;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
