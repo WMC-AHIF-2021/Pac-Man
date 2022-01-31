@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Change of Appearance</title>
-		<link rel="stylesheet" href="css/stylesheet.css" />
+		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
 		<link href="Images/pac-man-logo-icon.ico" rel="shortcut icon">
 	<head>
 	<body>
@@ -48,10 +48,11 @@
 		</article>
 		<article class="footer">
 			<p class="footerP">
-				<a href="pacman-changeOfAppearance-dark.html"><img class="mode" src="Images/lightmode.png"></a>
+				<img class="mode" src="Images/lightmode.png" onclick="switchToDarkmode();" id="mode">
 				<br>
 			</p>
 			<br>
 		</article>
+		<script src="darkmode.js"></script>
 	</body>
 	</html>
