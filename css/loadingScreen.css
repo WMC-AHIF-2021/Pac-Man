@@ -4,7 +4,7 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: black;
     z-index: 1;
     opacity: 1;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;

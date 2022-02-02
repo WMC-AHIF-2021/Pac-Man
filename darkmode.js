@@ -1,15 +1,15 @@
 if(localStorage.isDarkmode == "true") {
     switchToDarkmode();
 }
+else {
+    switchToLightmode();
+}
 
 function switchToDarkmode() {
     let element = document.getElementById("styles");
     element.href = "css/stylesheet-dark.css";
     let modeImg = document.getElementById("mode");
     modeImg.src = "Images/darkmode.png";
-
-    let loadingScreen = document.getElementById("loadingScreen");
-    loadingScreen.style.backgroundColor = "#000000";
 
     localStorage.isDarkmode = "true";
     modeImg.onclick = switchToLightmode;
@@ -19,6 +19,9 @@ function switchToLightmode() {
     element.href = "css/stylesheet.css";
     let modeImg = document.getElementById("mode");
     modeImg.src = "Images/lightmode.png";
+
+    let loadingScreen = document.getElementById("loadingScreen");
+    loadingScreen.style.backgroundColor = "#ffffff";
 
     localStorage.isDarkmode = "false";
     modeImg.onclick = switchToDarkmode;
