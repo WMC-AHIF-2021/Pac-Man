@@ -8,10 +8,13 @@ function switchToDarkmode() {
     let modeImg = document.getElementById("mode");
     modeImg.src = "Images/darkmode.png";
 
+    let loadingScreen = document.getElementById("loadingScreen");
+    loadingScreen.style.backgroundColor = "#000000";
+
     localStorage.isDarkmode = "true";
-    modeImg.onclick = swtichToLightmode;
+    modeImg.onclick = switchToLightmode;
 }
-function swtichToLightmode() {
+function switchToLightmode() {
     let element = document.getElementById("styles");
     element.href = "css/stylesheet.css";
     let modeImg = document.getElementById("mode");
