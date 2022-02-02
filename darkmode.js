@@ -1,3 +1,6 @@
+if(localStorage.isDarkmode == null) {
+    switchToDarkmode();
+}
 if(localStorage.isDarkmode == "true") {
     switchToDarkmode();
 }
