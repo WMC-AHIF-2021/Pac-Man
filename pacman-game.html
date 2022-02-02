@@ -1,9 +1,10 @@
 <html class="bg">
-	<head>
+	<head lang="en">
 		<title>Game</title>
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
+		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
 		<link href="Images/pac-man-logo-icon.ico" rel="shortcut icon">
-	<head>
+	</head>
 	<body>
 		<header class="btn-group">
 			<button onclick="window.location.href = 'index.html';">RULES</button>
@@ -33,6 +34,10 @@
 			</p>
 			<br>
 		</article>
+		<div id="loadingScreen">
+			<img id="loadingScreenImg" src="Images/Inky.png" alt="loadingScreenImage"> 
+		</div>
 		<script src="darkmode.js"></script>
+		<script src="loadingScreen.js"></script>
 	</body>
 </html>
