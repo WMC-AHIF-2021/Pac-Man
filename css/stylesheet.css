@@ -4,7 +4,7 @@
     width: 25%;
     cursor: pointer;
     float: left;
-    background-color: #BDBDBD;
+    background-color: #D8D8D8;
     color: black;
     border-top: none;
     border-right: none;
@@ -16,7 +16,6 @@
     border-bottom: 5px solid black;
     border-right: 1px solid rgb(206, 206, 206);
     border-left: 1px solid rgb(206, 206, 206);
-    color: #01DFD7;
     border-top: none;
 }
 
@@ -91,7 +90,7 @@ header {
 .footer{
     margin: 0em;
     border-top: 2px solid black;
-    background-color: #BDBDBD;
+    background-color: #D8D8D8;
 }
 
 .footerP{
@@ -100,7 +99,7 @@ header {
 }
 
 .rules {
-    background-color: #BDBDBD;
+    background-color: #D8D8D8;
     border-radius: 1em;
     border: 2px solid black
 }
