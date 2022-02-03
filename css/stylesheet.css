@@ -28,7 +28,7 @@ article{
     text-align: justify;
 }
 h2{
-    color: #04B4AE;
+    color: #81BEF7;
 }
 
 body{
@@ -39,12 +39,12 @@ body{
 img.level1{
     float:right;
     margin-right: 10%;
-    border: 1px solid white;
+    border: 2px solid black;
 }
 
 img.level2{
     float:right;
-    border: 1px solid white;
+    border: 2px solid black;
     margin-left: 12em;
     margin-right: 10px;
 }
@@ -57,7 +57,7 @@ img.header{
 img.level {
     width: 10em;
     margin-right: 1em;
-    border: 1px solid white;
+    border: 2px solid black;
 }
 
 img.ghosts {

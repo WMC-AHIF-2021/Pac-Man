@@ -63,6 +63,7 @@ img.header{
 img.level {
     width: 10em;
     margin-right: 1em;
+    border: 1px solid white;
 }
 
 img.ghosts {
