@@ -1,0 +1,105 @@
+.btn-group button {
+    font-size: large;
+    height: 45px;
+    width: 25%;
+    cursor: pointer;
+    float: left;
+    background-color: #D8D8D8;
+    color: black;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    border-left: none;
+}
+
+.btn-group button:hover {
+    border-bottom: 5px solid black;
+    border-right: 1px solid rgb(206, 206, 206);
+    border-left: 1px solid rgb(206, 206, 206);
+    border-top: none;
+}
+
+
+article{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+}
+h2{
+    color: #81BEF7;
+}
+
+body{
+    margin: 0em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 150%;
+}
+img.level1{
+    float:right;
+    margin-right: 10%;
+    border: 2px solid black;
+}
+
+img.level2{
+    float:right;
+    border: 2px solid black;
+    margin-left: 12em;
+    margin-right: 10px;
+}
+
+img.header{
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+img.level {
+    width: 10em;
+    margin-right: 1em;
+    border: 2px solid black;
+}
+
+img.ghosts {
+    width: 5em;
+    margin-right: 1em;
+}
+
+img.mode {
+    margin-right: 2em;
+    width: 2em;
+    float: right;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+td {
+    vertical-align: top;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.footer{
+    margin: 0em;
+    border-top: 2px solid black;
+    background-color: #D8D8D8;
+}
+
+.footerP{
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+.rules {
+    background-color: #D8D8D8;
+    border-radius: 1em;
+    border: 2px solid black
+}

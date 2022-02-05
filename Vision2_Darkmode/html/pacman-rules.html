@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html class="bg">
+<html>
 	<head>
 		<title>Rules</title>
-		<link rel="stylesheet" href="stylesheet2.css" />
+		<link rel="stylesheet" href="css/stylesRules.css" />
 	<head>
-	<body>
-		<img src="pacman.jpg" alt="Logo" width="auto" height="50px">
-		<br>
+	<body bgcolor="#1C1C1C">
 		<header class="btn-group">
-			<button onclick="window.location.href = 'index.html';">Index</button>
-			<button onclick="window.location.href = 'pacman-history.html';">History</button>
-			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">Change of Appearance</button>
-			<!--<button onclick="window.location.href = 'pacman-game.html';">Game</button>-->
+			<button onclick="window.location.href = 'pacman-rules.html';">RULES</button>
+			<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
+			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
+			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
-		<article class="bg2">
-			<img src="../Images/PacmanHeaderRules.jpg" class="header">
+		<br>
+		<br>
+		<img id="headerimg" src="../Images/Dark_PacmanHeaderRules.jpg" width="100%">
+		<article>
 			<h2>Game target</h2>
 			<p>
 				In Pac-Man, the goal is to eat all the dots on the playing field. When you have collected all the dots, 
@@ -23,6 +23,7 @@
 				Blinky, Pinky, Inky and Clyde are the antagonists and try to catch you by different strategies. If you are eaten 
 				by a ghost, you lose a live.
 			</p>
+			<br>
 			<h2>Level structure</h2>
 			<p>
 				<table>
@@ -39,6 +40,7 @@
 					</tr>
 				</table>	
 			</p>
+			<br>
 			<h2>Ghosts</h2>
 			<p>
 				<table>
@@ -62,7 +64,7 @@
 					</tr>
 					<tr><td><br></td></tr>
 					<tr>
-						<td><img src="../Images/Inky.png" alt="Inky" class="ghosts"></td>
+						<td><img src="../Images/Inky.jpg" alt="Inky" class="ghosts"></td>
 						<td>
 							The behaviour of the cyan ghost Inky is the most difficut to predict. Sometimes he behaves like Blinky, 
 							Pinky or Clyde. This is because Inky's target square is a combination of Pac-Man's positon and Blinky's 
@@ -71,13 +73,14 @@
 					</tr>
 					<tr><td><br></td></tr>
 					<tr>
-						<td><img src="../Images/Clyde.png" alt="Clyde" class="ghosts"></td>
+						<td><img src="../Images/Clyde.jpg" alt="Clyde" class="ghosts"></td>
 						<td>
 							The orange ghost is Clyde. He moves away from Pac-Man rather than towards him.
 						</td>
 					</tr>
 				</table>
 			</p>
+			<br>
 			<h2>Rules briefly summarized: </h2>
 			<p>
 				<ol>
@@ -87,9 +90,6 @@
 				</ol>
 			</p>
 			<br>
-			<p class="lastParagraf">
-				<br>
-			</p>
 		</article>
     </body>
 </html>

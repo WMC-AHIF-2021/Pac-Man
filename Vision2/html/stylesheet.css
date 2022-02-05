@@ -22,17 +22,34 @@
 
 
 article{
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 150%;
-    margin: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
 }
 
 body{
     margin: 0em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 150%;
+}
+img.level1{
+    float:right;
+    margin-right: 10%;
+    border: 1px solid white;
+}
+
+img.level2{
+    float:right;
+    border: 1px solid white;
+    margin-left: 12em;
+    margin-right: 10px;
 }
 
 img.header{
     width: 100%;
+    border-bottom: 2px solid black;
 }
 
 img.level {
@@ -43,6 +60,12 @@ img.level {
 img.ghosts {
     width: 5em;
     margin-right: 1em;
+}
+
+img.mode {
+    margin-right: 2em;
+    width: 2em;
+    float: right;
 }
 
 li {
@@ -58,4 +81,21 @@ header {
     top: 0;
     width: 100%;
     z-index: 1;
+}
+
+
+.footer{
+    margin: 0em;
+    border-top: 2px solid black;
+}
+
+.footerP{
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+.rules {
+    background-color: rgba(212,239,255,255);
+    border-radius: 1em;
+    border: 2px solid black
 }

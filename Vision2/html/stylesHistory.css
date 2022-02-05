@@ -1,0 +1,64 @@
+#img {
+    float:right;
+    margin-right: 10%;
+    border: 1px solid white;
+}
+#img2 {    
+    float:right;
+    border: 1px solid white;
+    margin-left: 12em;
+    margin-right: 10px;
+}
+
+.btn-group button {
+    font-size: large;
+    height: 45px;
+    width: 25%;      
+    float: left;
+
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    border-left: none;
+}
+
+.btn-group button:hover {
+    border-bottom: 5px solid white;
+    color: white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    border-top: none;
+}
+
+
+article{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 150%;
+    margin: 2em;
+}
+
+body{
+    margin: 0em;
+    color: white;
+}
+
+img.header{
+    width: 100%;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+td {
+    vertical-align: top;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
