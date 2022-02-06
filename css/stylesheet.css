@@ -103,3 +103,17 @@ header {
     border-radius: 1em;
     border: 2px solid black
 }
+
+#img {
+    float:right;
+    border: 1px solid white;
+    margin-left: 2em;
+    margin-right: 5%;
+}
+
+#img2 {
+    float:right;
+    border: 1px solid white;
+    margin-left: 2em;
+    margin-right: 5%;
+}
