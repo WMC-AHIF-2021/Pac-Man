@@ -110,6 +110,7 @@ header {
     border: 1px solid white;
     margin-left: 2em;
     margin-right: 5%;
+    height: auto;
 }
 
 img.changeTN {
