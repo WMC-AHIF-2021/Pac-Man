@@ -110,7 +110,9 @@ header {
     border: 1px solid white;
     margin-left: 2em;
     margin-right: 5%;
-    height: auto;
+    width: unset;
+    height: -webkit-fill-available;
+    display: inline-block;
 }
 
 img.changeTN {
@@ -126,4 +128,8 @@ td.changeFR {
 
 table.changeTS {
     height: 50px;
+}
+
+.paragraph {
+    height: 150px;
 }
