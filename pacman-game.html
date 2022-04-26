@@ -3,18 +3,18 @@
 		<title>Game</title>
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
 		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
-		<link href="Images/pac-man-logo-icon.ico" rel="shortcut icon">
+		<link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
 	</head>
 	<body>
 		<header class="btn-group">
-			<button onclick="window.location.href = 'index.html';">RULES</button>
+			<button onclick="window.location.href = 'rules.html';">RULES</button>
 			<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
 			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
 			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
 		<br>
 		<br>
-		<img src="Images/PacmanHeaderGame.jpg" width="100%">
+		<img src="imgs/Header/PacmanHeaderGame.jpg" width="100%">
 		<article>
 			<h1>Game</h1>
 			<p>
@@ -29,15 +29,15 @@
 		</article>
 		<article class="footer">
 			<p class="footerP">
-				<img class="mode" src="Images/lightmode.png" onclick="switchToDarkmode();" id="mode">
+				<img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" id="mode" alt="Darkmode">
 				<br>
 			</p>
 			<br>
 		</article>
 		<div id="loadingScreen">
-			<img id="loadingScreenImg" src="Images/Inky.png" alt="loadingScreenImage"> 
+			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
 		</div>
-		<script src="darkmode.js"></script>
-		<script src="loadingScreen.js"></script>
+		<script src="scripts/loadingScreen.js"></script>
+		<script src="scripts/darkmode.js"></script>
 	</body>
 </html>

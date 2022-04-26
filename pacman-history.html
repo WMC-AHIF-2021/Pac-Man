@@ -4,18 +4,18 @@
 		<title>History</title>
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
 		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
-		<link href="Images/pac-man-logo-icon.ico" rel="shortcut icon">
+		<link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
 	</head>
 	<body>
 		<header class="btn-group">
-			<button onclick="window.location.href = 'index.html';">RULES</button>
+			<button onclick="window.location.href = 'rules.html';">RULES</button>
 			<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
 			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
 			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
 		<br>
 		<br>
-		<img class="header" src="Images/PacmanHeaderHistory.jpg">
+		<img class="header" src="imgs/Header/PacmanHeaderHistory.jpg" alt="Header">
 		<article>
 			<br><br>
             Pac-Man is an arcade- and videogame, which was released in 1980 by Namco.<br><br>
@@ -23,8 +23,8 @@
 			some of them unauthorized.<br>The most popular of these was Ms. Pac-Man, which first
 			appeared in 1981 as an unauthorized version of the game.<br>
 			According to Japanese game designer Toru Iwatani, Pac-Man was conceived as an antidote to  games with violent themes. <br><br><br>
-			<img class="level1" src="Images/normallvl.jpg" alt="normallvl" width="15.41%" height="auto">
-            <img class="level2" src="Images/lvl256.jpg" alt="lvl256" width="15%" height="auto">
+			<img class="level1" src="imgs/normallvl.jpg" alt="normallvl" width="15.41%">
+            <img class="level2" src="imgs/lvl256.jpg" alt="lvl256" width="15%">
             
 			
             <h2>Name:</h2>
@@ -55,15 +55,15 @@
 		</article>
 		<article class="footer">
 			<p class="footerP">
-				<img class="mode" src="Images/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+				<img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
 				<br>
 			</p>
 			<br>
 		</article> 
 		<div id="loadingScreen">
-			<img id="loadingScreenImg" src="Images/Inky.png" alt="loadingScreenImage"> 
+			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
 		</div>
-		<script src="darkmode.js"></script>	
-		<script src="loadingScreen.js"></script>
+		<script src="scripts/loadingScreen.js"></script>
+		<script src="scripts/darkmode.js"></script>
 	</body>
 </html>

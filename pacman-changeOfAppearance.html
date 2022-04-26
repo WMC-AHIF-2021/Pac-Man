@@ -4,18 +4,18 @@
 		<title>Change of Appearance</title>
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
 		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
-		<link href="Images/pac-man-logo-icon.ico" rel="shortcut icon">
+		<link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
 	</head>
 	<body>
 		<header class="btn-group">
-			<button onclick="window.location.href = 'index.html';">RULES</button>
+			<button onclick="window.location.href = 'rules.html';">RULES</button>
 			<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
 			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
 			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
 		<br>
 		<br>
-		<img class="header" src="Images/PacmanHeaderCOA.jpg" alt="Header">
+		<img class="header" src="imgs/Header/PacmanHeaderCOA.jpg" alt="Header">
 		<article>
 			<h2>Then vs Now</h2>
 			<p>
@@ -28,15 +28,14 @@
 				Championship edition or the “Ms. Pacman” edition.<br><br>
 				<table class="changeTS">
 					<tr>
-						<td class="changeFR" ><img class="changeTN" src="./Images/pacman-level-orginal.png" alt="OldVersion" width="30%" height="auto"></td>
-						<td><img class="changeTN" src="./Images/pacman-level.png" alt="NewVersion" width="70%" height="auto"></td>		
+						<td class="changeFR" ><img class="changeTN" src="./imgs/pacman-level-orginal.png" alt="OldVersion" width="30%"></td>
+						<td><img class="changeTN" src="./imgs/pacman-level.png" alt="NewVersion" width="70%"></td>
 					</tr>
-				</table>	
-			</p>
+				</table>
 			<br><br>
 			<h2>Championship Edition</h2>
 			<p class="paragraph">
-				<img class="changeOA" src="Images/pacman-level-new.jpg" alt="ChampionshipVersion" width="25%" height="auto">
+				<img class="changeOA" src="imgs/pacman-level-new.jpg" alt="ChampionshipVersion" width="25%">
 				The championship Version was especially designed for the Event and you only was able to play it while the 
 				championship, as a participant. The design for the championship was a highlight of Pacman because it was very 
 				special. It looked more colorful because it had very bright and a lot of different colors, instead of the normal 
@@ -48,7 +47,7 @@
 			<br><br>
 			<h2>"Ms. Pacman" Edition</h2>
 			<p class="paragraph">
-				<img class="changeOA" src="Images/pacman-level-mspacman.png" alt="MsPacman" width="15%" height="auto">
+				<img class="changeOA" src="imgs/pacman-level-mspacman.png" alt="MsPacman" width="15%">
 				Here is a comparison between the two most popular versions. The original Pacman version and the Ms. Pacman version. 
 				The first thing you will see, is that the yellow circle now has a red bow and a kiss mouth. In contrast to the 
 				original version, Ms. Pacman has four different labyrinths, which are displayed in different colors, and the walls 
@@ -60,15 +59,15 @@
 		</article>
 		<article class="footer">
 			<p class="footerP">
-				<img class="mode" src="Images/lightmode.png" alt="Mode" onclick="switchToDarkmode();" id="mode">
+				<img class="mode" src="imgs/Dark-LightMode/lightmode.png" alt="Mode" onclick="switchToDarkmode();" id="mode">
 				<br>
 			</p>
 			<br>
 		</article>
 		<div id="loadingScreen">
-			<img id="loadingScreenImg" src="Images/Inky.png" alt="loadingScreenImage"> 
+			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
 		</div>
-		<script src="darkmode.js"></script>
-		<script src="loadingScreen.js"></script>
+		<script src="scripts/loadingScreen.js"></script>
+		<script src="scripts/darkmode.js"></script>
 	</body>
 	</html>
