@@ -23,14 +23,11 @@
 
 
 article{
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 2em 10%;
     text-align: justify;
 }
 
-body{
+body {
     margin: 0em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 150%;
@@ -134,4 +131,33 @@ table.changeTS {
 
 .paragraph {
     height: 150px;
+}
+
+#animationIndex {
+    top: 35em;
+    position: fixed;
+    animation: runningPacMan 5s linear infinite;
+}
+@keyframes runningPacMan {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100vw;
+    }
+}
+#animationIndexGhost {
+    top: 35em;
+    left: -200px;
+    position: fixed;
+    animation: runningPacMan 5s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes runningGhost {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100vw;
+    }
 }

@@ -21,21 +21,19 @@
 
 
 article{
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 2em 10%;
     text-align: justify;
 }
 h2{
     color: #81BEF7;
 }
 
-body{
+body {
     margin: 0em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 150%;
 }
+
 img.level1{
     float:right;
     margin-right: 10%;
@@ -111,7 +109,6 @@ header {
     margin-left: 2em;
     margin-right: 5%;
     width: unset;
-    height: -webkit-fill-available;
     display: inline-block;
 }
 

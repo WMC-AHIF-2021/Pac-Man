@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Index</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>PacMan</title>
+    <link rel="stylesheet" href="css/stylesheet.css" id="styles">
+    <link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+    <link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
+</head>
+<body>
+<header class="btn-group">
+    <button onclick="window.location.href = 'rules.html';">RULES</button>
+    <button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
+    <button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
+    <button onclick="window.location.href = 'pacman-game.html';">GAME</button>
+</header>
+<br>
+<br>
+<img class="header" src="imgs/Header/HeaderTemp.png" alt="Header-Image">
+
+<img id="animationIndex" src="imgs/PacMan.png" alt="PacMan for animation">
+<img id="animationIndexGhost" src="imgs/InkyMirrored.png" alt="Ghost for animation">
+
+<article class="footer" style="position: absolute; bottom: 0; width: 100vw">
+    <p class="footerP">
+        <img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" id="mode" alt="Light/Darkmode-Image">
+        <br>
+    </p>
+    <br>
+</article>
+
+<div id="loadingScreen">
+    <img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+</div>
+<script src="scripts/loadingScreen.js"></script>
+<script src="scripts/animationIndexPacMan.js"></script>
+<script src="scripts/darkmode.js"></script>
+</body>
 </html>
