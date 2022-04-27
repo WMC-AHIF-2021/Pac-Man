@@ -130,3 +130,32 @@ table.changeTS {
 .paragraph {
     height: 150px;
 }
+
+#animationIndex {
+    top: 35em;
+    position: fixed;
+    animation: runningPacMan 5s linear infinite;
+}
+@keyframes runningPacMan {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100vw;
+    }
+}
+#animationIndexGhost {
+    top: 35em;
+    left: -200px;
+    position: fixed;
+    animation: runningPacMan 5s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes runningGhost {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100vw;
+    }
+}
