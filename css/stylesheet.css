@@ -132,7 +132,7 @@ table.changeTS {
 }
 
 #animationIndex {
-    top: 35em;
+    top: clamp(50vh, 300px, 100vh);
     position: fixed;
     animation: runningPacMan 5s linear infinite;
 }
@@ -145,7 +145,7 @@ table.changeTS {
     }
 }
 #animationIndexGhost {
-    top: 35em;
+    top: clamp(50vh, 300px, 100vh);
     left: -200px;
     position: fixed;
     animation: runningPacMan 5s linear infinite;
