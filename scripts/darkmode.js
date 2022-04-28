@@ -28,7 +28,7 @@ function switchToDarkmode() {
     } catch(e) {}
     try {
         let imgHeaderIndex = document.getElementById("headerImgIndex");
-        imgHeaderIndex.src = "imgs/Header/HeaderTempDark.jpg";
+        imgHeaderIndex.src = "imgs/Header/HeaderTempDark.png";
     } catch(e) {}
     try {
         let imgHeaderCoa = document.getElementById("headerImgCoa");
@@ -58,7 +58,7 @@ function switchToLightmode() {
     } catch(e) {}
     try {
         let imgHeaderIndex = document.getElementById("headerImgIndex");
-        imgHeaderIndex.src = "imgs/Header/HeaderTemp.jpg";
+        imgHeaderIndex.src = "imgs/Header/HeaderTemp.png";
     } catch(e) {}
     try {
         let imgHeaderCoa = document.getElementById("headerImgCoa");
