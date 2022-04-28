@@ -28,7 +28,7 @@ function switchToDarkmode() {
     } catch(e) {}
     try {
         let imgHeaderIndex = document.getElementById("headerImgIndex");
-        imgHeaderIndex.src = "imgs/Header/Dark_PacmanHeaderIndex.jpg";
+        imgHeaderIndex.src = "imgs/Header/Dark_HeaderTemp.jpg";
     } catch(e) {}
     try {
         let imgHeaderCoa = document.getElementById("headerImgCoa");
@@ -58,7 +58,7 @@ function switchToLightmode() {
     } catch(e) {}
     try {
         let imgHeaderIndex = document.getElementById("headerImgIndex");
-        imgHeaderIndex.src = "imgs/Header/PacmanHeaderIndex.jpg";
+        imgHeaderIndex.src = "imgs/Header/HeaderTemp.jpg";
     } catch(e) {}
     try {
         let imgHeaderCoa = document.getElementById("headerImgCoa");
