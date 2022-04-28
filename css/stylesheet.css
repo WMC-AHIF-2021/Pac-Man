@@ -137,26 +137,31 @@ table.changeTS {
     position: fixed;
     animation: runningPacMan 5s linear infinite;
 }
+#animationIndex {
+    top: clamp(50vh, 300px, 100vh);
+    position: fixed;
+    animation: runningPacMan 5s linear infinite;
+}
 @keyframes runningPacMan {
     0% {
         left: -100px;
     }
     100% {
-        left: 100vw;
+        left: calc(100vw + 150px);
     }
 }
 #animationIndexGhost {
     top: clamp(50vh, 300px, 100vh);
     left: -200px;
     position: fixed;
-    animation: runningPacMan 5s linear infinite;
-    animation-delay: 0.5s;
+    animation: runningGhost 5s linear infinite;
+    transform: translateX(-150px);
 }
 @keyframes runningGhost {
     0% {
-        left: -100px;
+        left: -150px;
     }
     100% {
-        left: 100vw;
+        left: calc(100vw + 150px);
     }
 }
