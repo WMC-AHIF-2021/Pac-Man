@@ -28,7 +28,7 @@ function switchToDarkmode() {
     } catch(e) {}
     try {
         let imgHeaderIndex = document.getElementById("headerImgIndex");
-        imgHeaderIndex.src = "imgs/Header/Dark_HeaderTempDark.jpg";
+        imgHeaderIndex.src = "imgs/Header/HeaderTempDark.jpg";
     } catch(e) {}
     try {
         let imgHeaderCoa = document.getElementById("headerImgCoa");
