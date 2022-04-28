@@ -12,7 +12,6 @@
     border-left: none;
 
 }
-
 .btn-group button:hover {
     border-bottom: 5px solid #2ECCFA;
     color: #2ECCFA;
@@ -26,9 +25,8 @@ article{
     margin: 2em 10%;
     text-align: justify;
 }
-
 body {
-    margin: 0em;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 150%;
     color: white;
@@ -45,42 +43,45 @@ img.level1{
     margin-right: 10%;
     border: 1px solid white;
 }
-
 img.level2{
     float:right;
     border: 1px solid white;
     margin-left: 12em;
     margin-right: 10px;
 }
-
 img.header{
     width: 100%;
     border-bottom: 2px solid #2ECCFA;
 }
-
 img.level {
     width: 10em;
     margin-right: 1em;
     border: 1px solid white;
 }
-
 img.ghosts {
     width: 5em;
     margin-right: 1em;
 }
-
 img.mode {
     margin-right: 2em;
     width: 2em;
     float: right;
 }
+img.changeTN {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 li {
     margin-bottom: 1em;
 }
-
 td {
     vertical-align: top;
+}
+td.changeFR {
+    width: 70%;
 }
 
 header {
@@ -89,14 +90,11 @@ header {
     width: 100%;
     z-index: 1;
 }
-
-
 .footer{
-    margin: 0em;
+    margin: 0;
     border-top: 2px solid #2ECCFA;
     background-color: black;
 }
-
 .footerP{
     margin-right: 2em;
     margin-left: 2em;
@@ -106,24 +104,12 @@ header {
     border-radius: 1em;
     border: 2px solid #2ECCFA;
 }
-
 .changeOA {
     float:right;
     border: 1px solid white;
     margin-left: 2em;
     margin-right: 5%;
     height: auto;
-}
-
-img.changeTN {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-td.changeFR {
-    width: 70%;
 }
 
 table.changeTS {
@@ -144,21 +130,21 @@ table.changeTS {
         left: -100px;
     }
     100% {
-        left: 100vw;
+        left: calc(100vw + 150px);
     }
 }
 #animationIndexGhost {
     top: clamp(50vh, 300px, 100vh);
     left: -200px;
     position: fixed;
-    animation: runningPacMan 5s linear infinite;
-    animation-delay: 0.5s;
+    animation: runningGhost 5s linear infinite;
+    transform: translateX(-150px);
 }
 @keyframes runningGhost {
     0% {
-        left: -100px;
+        left: -150px;
     }
     100% {
-        left: 100vw;
+        left: calc(100vw + 150px);
     }
 }
