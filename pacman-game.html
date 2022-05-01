@@ -1,10 +1,13 @@
 <html class="bg" lang="en">
 	<head lang="en">
 		<title>Game - PacMan</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+			  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
 		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
 		<link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
+		<script src="build/pacman.js"></script>
 	</head>
 	<body>
 		<header class="btn-group">
@@ -14,19 +17,20 @@
 			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
 		<br>
-		<br>
 		<img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
 		<article>
-			<h1>Game</h1>
-			<p>
-				Coming soon...
-			</p>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+			<div class="container-md">
+				<div class="row">
+					<div class="col-sm d-flex justify-content-center">
+						<canvas id="playground" width="425" height="800" oncontextmenu="return false;"></canvas>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm d-flex justify-content-center" id="gameState"></div>
+					<div class="col-sm-3"></div>
+				</div>
+			</div>
 		</article>
 		<article class="footer">
 			<p class="footerP">
@@ -38,7 +42,7 @@
 		<div id="loadingScreen">
 			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
 		</div>
-		<script src="scripts/loadingScreen.js"></script>
-		<script src="scripts/darkmode.js"></script>
+		<script src="scripts/src/loadingScreen.js"></script>
+		<script src="scripts/src/darkmode.js"></script>
 	</body>
 </html>
