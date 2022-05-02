@@ -109,8 +109,7 @@ header {
     border: 1px solid white;
     margin-left: 2em;
     margin-right: 5%;
-    width: unset;
-    display: inline-block;
+    height: auto;
 }
 
 img.changeTN {
@@ -128,9 +127,7 @@ table.changeTS {
     height: 50px;
 }
 
-.paragraph {
-    height: 150px;
-}
+
 
 #animationIndex {
     bottom: 200px;
