@@ -54,7 +54,7 @@ class Field {
         ctx.beginPath();
         let color = "black";
         if(this.fieldType == FieldType.Wall){
-            color = "blue";
+            color = "#1919A6";
         }
         else if(this.fieldType == FieldType.None){
             color = "white";
@@ -170,6 +170,7 @@ function init(){
         count += pacman.move(fields,event,context);
         drawPlayground(context,fields);
         console.log(count);
+        event.preventDefault();
     });
 }
 
