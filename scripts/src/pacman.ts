@@ -4,17 +4,10 @@ enum FieldType {
     BlockWithPacman,
     BlockWithPacmanLeft,
     BlockWithPacmanRight,
+    BlockWithPacmanUp,
+    BlockWithPacmanDown,
     BlockNormal,
-    None,
-    Header
-}
-
-enum Direction {
-    Left,
-    Right,
-    Up,
-    Down,
-    Front
+    None
 }
 
 function generatePlayground():Field[][]{
@@ -50,7 +43,7 @@ class Field {
     constructor(type:FieldType) {
         this.fieldType = type;
     }
-    public drawField(ctx:CanvasRenderingContext2D, x:number, y:number){
+    public drawField(ctx:CanvasRenderingContext2D, x:number, y:number,playCount:number){
         ctx.beginPath();
         let color = "black";
         if(this.fieldType == FieldType.Wall){
@@ -69,18 +62,42 @@ class Field {
             ctx.rect(x*this.FIELD_SIZE+this.FIELD_SIZE/2-2,y*this.FIELD_SIZE+this.FIELD_SIZE/2-2, 4, 4);
             ctx.fill();
         }
-        else if(this.fieldType == FieldType.BlockWithPacman || this.fieldType == FieldType.BlockWithPacmanLeft){
+        else if(this.fieldType == FieldType.BlockWithPacman || this.fieldType == FieldType.BlockWithPacmanRight || this.fieldType == FieldType.BlockWithPacmanLeft || this.fieldType == FieldType.BlockWithPacmanUp || this.fieldType == FieldType.BlockWithPacmanDown){
             ctx.beginPath();
             color = "yellow";
             ctx.fillStyle = color;
             ctx.arc(x*this.FIELD_SIZE+this.FIELD_SIZE/2,y*this.FIELD_SIZE+this.FIELD_SIZE/2,this.FIELD_SIZE/2-3,0,Math.PI*2);
             ctx.fill();
-            if (this.fieldType == FieldType.BlockWithPacmanLeft){
+            if (this.fieldType == FieldType.BlockWithPacmanRight && playCount%2==1){
                 ctx.beginPath();
                 ctx.fillStyle = "black";
                 ctx.moveTo(x*this.FIELD_SIZE+this.FIELD_SIZE/2,y*this.FIELD_SIZE+this.FIELD_SIZE/2);
                 ctx.lineTo(x*this.FIELD_SIZE+this.FIELD_SIZE*7/8, y*this.FIELD_SIZE);
                 ctx.lineTo(x*this.FIELD_SIZE+this.FIELD_SIZE*7/8, y*this.FIELD_SIZE+this.FIELD_SIZE);
+                ctx.fill();
+            }
+            else if(this.fieldType == FieldType.BlockWithPacmanLeft && playCount%2==1) {
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.moveTo(x * this.FIELD_SIZE + this.FIELD_SIZE / 2, y * this.FIELD_SIZE + this.FIELD_SIZE / 2);
+                ctx.lineTo(x * this.FIELD_SIZE, y * this.FIELD_SIZE);
+                ctx.lineTo(x * this.FIELD_SIZE, y * this.FIELD_SIZE + this.FIELD_SIZE);
+                ctx.fill();
+            }
+            else if(this.fieldType == FieldType.BlockWithPacmanUp && playCount%2==1){
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.moveTo(x * this.FIELD_SIZE + this.FIELD_SIZE / 2, y * this.FIELD_SIZE + this.FIELD_SIZE / 2);
+                ctx.lineTo(x * this.FIELD_SIZE, y * this.FIELD_SIZE);
+                ctx.lineTo(x * this.FIELD_SIZE+ + this.FIELD_SIZE, y * this.FIELD_SIZE);
+                ctx.fill();
+            }
+            else if(this.fieldType == FieldType.BlockWithPacmanDown && playCount%2==1){
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.moveTo(x * this.FIELD_SIZE + this.FIELD_SIZE / 2, y * this.FIELD_SIZE + this.FIELD_SIZE / 2);
+                ctx.lineTo(x * this.FIELD_SIZE, y * this.FIELD_SIZE + this.FIELD_SIZE);
+                ctx.lineTo(x * this.FIELD_SIZE+ + this.FIELD_SIZE, y * this.FIELD_SIZE + this.FIELD_SIZE);
                 ctx.fill();
             }
         }
@@ -89,12 +106,10 @@ class Field {
 class Pacman extends Field{
     public Row:number;
     public Col:number;
-    public Direction:Direction;
     constructor(type:FieldType,x:number,y:number) {
         super(type);
         this.Row = x;
         this.Col = y;
-        this.Direction = Direction.Front;
     }
     public move(fields:Field[][], event,context:CanvasRenderingContext2D):number {
         let nextField: Field = null;
@@ -107,7 +122,7 @@ class Pacman extends Field{
                 }
                 if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
                     fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row][this.Col + 1].fieldType = FieldType.BlockWithPacman;
+                    fields[this.Row][this.Col + 1].fieldType = FieldType.BlockWithPacmanRight;
                     this.Col++;
                 }
                 break;
@@ -129,7 +144,7 @@ class Pacman extends Field{
                 }
                 if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
                     fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row - 1][this.Col].fieldType = FieldType.BlockWithPacman;
+                    fields[this.Row - 1][this.Col].fieldType = FieldType.BlockWithPacmanUp;
                     this.Row--;
                 }
                 break;
@@ -140,7 +155,7 @@ class Pacman extends Field{
                 }
                 if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
                     fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row + 1][this.Col].fieldType = FieldType.BlockWithPacman;
+                    fields[this.Row + 1][this.Col].fieldType = FieldType.BlockWithPacmanDown;
                     this.Row++;
                 }
                 break;
@@ -148,12 +163,13 @@ class Pacman extends Field{
         return n;
     }
 }
-function drawPlayground(context:CanvasRenderingContext2D,fields:Field[][]){
-
+function drawPlayground(context:CanvasRenderingContext2D,fields:Field[][], playCount:number, count:number){
+    context.fillStyle = "white";
+    context.fillText(`Count: ${count}`,0,100);
     for (let i = 0; i < fields.length; i++){
         let row = fields[i];
         for(let j = 0; j < row.length; j++){
-            row[j].drawField(context,j,i);
+            row[j].drawField(context,j,i,playCount);
         }
     }
 }
@@ -165,10 +181,12 @@ function init(){
     let fields:Field[][] = generatePlayground();
     let pacman = new Pacman(FieldType.BlockWithPacman,14,8);
     let count = 0;
-    drawPlayground(context,fields);
+    let playCount = 0;
+    drawPlayground(context,fields,playCount,count);
     document.addEventListener("keydown", event =>{
         count += pacman.move(fields,event,context);
-        drawPlayground(context,fields);
+        playCount++;
+        drawPlayground(context,fields,playCount,count);
         console.log(count);
         event.preventDefault();
     });
