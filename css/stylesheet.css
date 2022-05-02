@@ -35,6 +35,10 @@ body {
     line-height: 150%;
 }
 
+body.scrollen{
+    overflow: hidden;
+}
+
 img.level1{
     float:right;
     margin-right: 10%;
