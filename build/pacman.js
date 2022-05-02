@@ -3,9 +3,11 @@ var FieldType;
     FieldType[FieldType["Wall"] = 0] = "Wall";
     FieldType[FieldType["BlockWithPoint"] = 1] = "BlockWithPoint";
     FieldType[FieldType["BlockWithPacman"] = 2] = "BlockWithPacman";
-    FieldType[FieldType["BlockNormal"] = 3] = "BlockNormal";
-    FieldType[FieldType["None"] = 4] = "None";
-    FieldType[FieldType["Header"] = 5] = "Header";
+    FieldType[FieldType["BlockWithPacmanLeft"] = 3] = "BlockWithPacmanLeft";
+    FieldType[FieldType["BlockWithPacmanRight"] = 4] = "BlockWithPacmanRight";
+    FieldType[FieldType["BlockNormal"] = 5] = "BlockNormal";
+    FieldType[FieldType["None"] = 6] = "None";
+    FieldType[FieldType["Header"] = 7] = "Header";
 })(FieldType || (FieldType = {}));
 var Direction;
 (function (Direction) {
@@ -65,12 +67,20 @@ class Field {
             ctx.rect(x * this.FIELD_SIZE + this.FIELD_SIZE / 2 - 2, y * this.FIELD_SIZE + this.FIELD_SIZE / 2 - 2, 4, 4);
             ctx.fill();
         }
-        else if (this.fieldType == FieldType.BlockWithPacman) {
+        else if (this.fieldType == FieldType.BlockWithPacman || this.fieldType == FieldType.BlockWithPacmanLeft) {
             ctx.beginPath();
             color = "yellow";
             ctx.fillStyle = color;
             ctx.arc(x * this.FIELD_SIZE + this.FIELD_SIZE / 2, y * this.FIELD_SIZE + this.FIELD_SIZE / 2, this.FIELD_SIZE / 2 - 3, 0, Math.PI * 2);
             ctx.fill();
+            if (this.fieldType == FieldType.BlockWithPacmanLeft) {
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.moveTo(x * this.FIELD_SIZE + this.FIELD_SIZE / 2, y * this.FIELD_SIZE + this.FIELD_SIZE / 2);
+                ctx.lineTo(x * this.FIELD_SIZE + this.FIELD_SIZE * 7 / 8, y * this.FIELD_SIZE);
+                ctx.lineTo(x * this.FIELD_SIZE + this.FIELD_SIZE * 7 / 8, y * this.FIELD_SIZE + this.FIELD_SIZE);
+                ctx.fill();
+            }
         }
     }
 }
@@ -103,7 +113,7 @@ class Pacman extends Field {
                 }
                 if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
                     fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row][this.Col - 1].fieldType = FieldType.BlockWithPacman;
+                    fields[this.Row][this.Col - 1].fieldType = FieldType.BlockWithPacmanLeft;
                     this.Col--;
                 }
                 break;
