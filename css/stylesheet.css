@@ -94,6 +94,7 @@ header {
 .footer{
     margin: 0;
     border-top: 2px solid black;
+    text-align: center;
     background-color: #D8D8D8;
 }
 
@@ -160,4 +161,9 @@ table.changeTS {
     100% {
         left: calc(100vw + 150px);
     }
+}
+
+#htlLeonding {
+    width: 150px;
+    transform: translate(55px);
 }
