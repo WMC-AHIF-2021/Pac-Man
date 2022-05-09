@@ -96,6 +96,7 @@ header {
 }
 .footer{
     margin: 0;
+    text-align: center;
     border-top: 2px solid #2ECCFA;
     background-color: black;
 }
@@ -147,4 +148,9 @@ table.changeTS {
     100% {
         left: calc(100vw + 150px);
     }
+}
+
+#htlLeonding {
+    width: 150px;
+    transform: translate(55px);
 }
