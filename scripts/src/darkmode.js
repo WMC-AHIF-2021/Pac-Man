@@ -35,9 +35,6 @@ function switchToDarkmode() {
         imgHeaderCoa.src = "imgs/Header/Dark_PacmanHeaderCOA.jpg";
     } catch(e) {}
 
-    let htlLogo = document.getElementById("htlLeonding");
-    htlLogo.src = "imgs/HtlLogo/HtlLogo-PacmanLight.png";
-
     localStorage.isDarkmode = "true";
     modeImg.onclick = switchToLightmode;
 }
@@ -67,9 +64,6 @@ function switchToLightmode() {
         let imgHeaderCoa = document.getElementById("headerImgCoa");
         imgHeaderCoa.src = "imgs/Header/PacmanHeaderCOA.jpg";
     } catch(e) {}
-
-    let htlLogo = document.getElementById("htlLeonding");
-    htlLogo.src = "imgs/HtlLogo/HtlLogo-PacmanDark.png";
 
     let loadingScreen = document.getElementById("loadingScreen");
     loadingScreen.style.backgroundColor = "#ffffff";
