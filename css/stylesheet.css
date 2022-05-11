@@ -167,3 +167,13 @@ table.changeTS {
     width: 150px;
     transform: translate(55px);
 }
+
+#aboutUs {
+    position: absolute;
+    margin-top: 25px;
+    transform: translate(-55px);
+    background-color: #D8D8D8;
+    font-size: small;
+    border: none;
+    cursor: pointer;
+}

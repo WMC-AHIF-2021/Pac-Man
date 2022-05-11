@@ -153,4 +153,19 @@ table.changeTS {
 #htlLeonding {
     width: 150px;
     transform: translate(55px);
+
+}
+
+#aboutUs {
+    position: absolute;
+    margin-top: 25px;
+    transform: translate(-55px);
+    background-color: black;
+    color: #D8D8D8;
+    font-size: small;
+    cursor: pointer;
+}
+#pinkyImgAboutUs {
+    transform: translateX(170px) translateY(-45px);
+    width: 25px;
 }
