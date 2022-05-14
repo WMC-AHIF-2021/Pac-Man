@@ -9,7 +9,6 @@
 	</head>
 	<body>
 		<header class="btn-group">
-			<button onclick="window.location.href = 'index.html';">INDEX</button>
 			<button onclick="window.location.href = 'rules.html';">RULES</button>
 			<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
 			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
@@ -56,13 +55,17 @@
 
 		<article class="footer">
 			<p class="footerP">
-				<img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+				<a href="https://www.htl-leonding.at/">
+					<img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+				</a>
+				<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
 				<img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
 				<br>
+			</p>
 			<br>
 		</article> 
 		<div id="loadingScreen">
-			<img onclick="window.location.href='https://www.htl-leonding.at/'" id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
 		</div>
 		<script src="scripts/src/loadingScreen.js"></script>
 		<script src="scripts/src/darkmode.js"></script>
