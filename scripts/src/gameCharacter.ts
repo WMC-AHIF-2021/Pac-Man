@@ -7,7 +7,13 @@ enum FieldType {
     BlockWithPacmanUp,
     BlockWithPacmanDown,
     BlockNormal,
-    None
+    None,
+    Ghost
+}
+
+enum GameCharacterType{
+    Pacman,
+    Blinky
 }
 
 function generatePlayground():Field[][]{
@@ -103,13 +109,15 @@ class Field {
         }
     }
 }
-class Pacman extends Field{
+class GameCharacter extends Field{
     public Row:number;
     public Col:number;
-    constructor(type:FieldType,x:number,y:number) {
+    public Character: GameCharacterType;
+    constructor(type:FieldType,x:number,y:number, character: GameCharacterType) {
         super(type);
         this.Row = x;
         this.Col = y;
+        this.Character = character;
     }
     public move(fields:Field[][], event,context:CanvasRenderingContext2D):number {
         let nextField: Field = null;
@@ -179,7 +187,7 @@ function init(){
     const canvas: any = document.getElementById("playground");
     const context: CanvasRenderingContext2D = canvas.getContext("2d");
     let fields:Field[][] = generatePlayground();
-    let pacman = new Pacman(FieldType.BlockWithPacman,14,8);
+    let pacman = new GameCharacter(FieldType.BlockWithPacman,14,8, GameCharacterType.Pacman);
     let count = 0;
     let playCount = 0;
     drawPlayground(context,fields,playCount,count);
