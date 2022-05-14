@@ -8,12 +8,8 @@ enum FieldType {
     BlockWithPacmanDown,
     BlockNormal,
     None,
+    NoneWithGhost,
     Ghost
-}
-
-enum GameCharacterType{
-    Pacman,
-    Blinky
 }
 
 function generatePlayground():Field[][]{
@@ -27,8 +23,8 @@ function generatePlayground():Field[][]{
         [new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ],
         [new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ],
         [new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ],
-        [new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),none          ,none          ,none          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ],
-        [new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),none          ,none          ,none          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint)],
+        [new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.None)          ,new Field(FieldType.NoneWithGhost) ,new Field(FieldType.None)         ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ],
+        [new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockWithPoint),new Field(FieldType.None)          ,new Field(FieldType.None)          ,new Field(FieldType.None)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockNormal)   ,new Field(FieldType.BlockNormal)   ],
         [new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ],
         [new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ,new Field(FieldType.Wall)          ],
         [new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ,new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.BlockWithPoint),new Field(FieldType.Wall)          ],
@@ -55,7 +51,7 @@ class Field {
         if(this.fieldType == FieldType.Wall){
             color = "#1919A6";
         }
-        else if(this.fieldType == FieldType.None){
+        else if(this.fieldType == FieldType.None || this.fieldType == FieldType.NoneWithGhost){
             color = "white";
         }
         ctx.fillStyle = color;
@@ -107,19 +103,97 @@ class Field {
                 ctx.fill();
             }
         }
+        if (this.fieldType == FieldType.Ghost || this.fieldType == FieldType.NoneWithGhost){
+            let image = new Image(10,10);
+            image.src = "../../imgs/Blinky.png";
+            ctx.drawImage(image,x*this.FIELD_SIZE,y*this.FIELD_SIZE,20,20);
+        }
     }
 }
-class GameCharacter extends Field{
+class Ghost{
     public Row:number;
     public Col:number;
-    public Character: GameCharacterType;
-    constructor(type:FieldType,x:number,y:number, character: GameCharacterType) {
+    public PrevField:FieldType;
+    constructor(row:number, col:number, prevField:FieldType) {
+        this.Row = row;
+        this.Col = col;
+        this.PrevField = prevField;
+    }
+    public moveGhost(fields:Field[][], context:CanvasRenderingContext2D, pacman:Pacman):void{
+        let alreadymoved: boolean = false;
+        if (this.Col - pacman.Col < 0){
+            if (fields[this.Row][this.Col + 1].fieldType != FieldType.Wall && fields[this.Row][this.Col + 1].fieldType != FieldType.None){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row][this.Col + 1].fieldType;
+                fields[this.Row][this.Col + 1].fieldType = FieldType.Ghost;
+                this.Col++;
+                alreadymoved = true;
+            }
+        }
+        if (this.Col-pacman.Col > 0 && alreadymoved === false){
+            if (fields[this.Row][this.Col - 1].fieldType != FieldType.Wall && fields[this.Row][this.Col - 1].fieldType != FieldType.None){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row][this.Col - 1].fieldType;
+                fields[this.Row][this.Col - 1].fieldType = FieldType.Ghost;
+                this.Col--;
+                alreadymoved = true;
+            }
+        }
+        if (this.Row - pacman.Row < 0 && alreadymoved === false){
+            if (fields[this.Row + 1][this.Col].fieldType != FieldType.Wall && fields[this.Row + 1][this.Col].fieldType != FieldType.None){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row + 1][this.Col].fieldType;
+                fields[this.Row + 1][this.Col].fieldType = FieldType.Ghost;
+                this.Row++;
+                alreadymoved = true;
+            }
+        }
+        if (this.Row - pacman.Row > 0 && alreadymoved === false){
+            if (fields[this.Row - 1][this.Col].fieldType != FieldType.Wall && fields[this.Row - 1][this.Col].fieldType != FieldType.None){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row - 1][this.Col].fieldType;
+                fields[this.Row - 1][this.Col].fieldType = FieldType.Ghost;
+                this.Row--;
+                alreadymoved = true;
+            }
+        }
+        if (alreadymoved === false){
+            if (fields[this.Row][this.Col+1].fieldType == FieldType.BlockWithPoint || fields[this.Row][this.Col+1].fieldType == FieldType.BlockWithPoint){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row][this.Col + 1].fieldType;
+                fields[this.Row][this.Col + 1].fieldType = FieldType.Ghost;
+                this.Col++;
+            }
+            else if(fields[this.Row][this.Col-1].fieldType == FieldType.BlockWithPoint || fields[this.Row][this.Col-1].fieldType == FieldType.BlockWithPoint){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row][this.Col - 1].fieldType;
+                fields[this.Row][this.Col - 1].fieldType = FieldType.Ghost;
+                this.Col--;
+            }
+            else if(fields[this.Row+1][this.Col].fieldType == FieldType.BlockWithPoint || fields[this.Row+1][this.Col].fieldType == FieldType.BlockWithPoint){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row + 1][this.Col].fieldType;
+                fields[this.Row + 1][this.Col].fieldType = FieldType.Ghost;
+                this.Row++;
+            }
+            else if(fields[this.Row-1][this.Col].fieldType == FieldType.BlockWithPoint || fields[this.Row-1][this.Col].fieldType == FieldType.BlockWithPoint){
+                fields[this.Row][this.Col].fieldType = this.PrevField;
+                this.PrevField = fields[this.Row - 1][this.Col].fieldType;
+                fields[this.Row - 1][this.Col].fieldType = FieldType.Ghost;
+                this.Row--;
+            }
+        }
+    }
+}
+class Pacman extends Field{
+    public Row:number;
+    public Col:number;
+    constructor(type:FieldType,x:number,y:number) {
         super(type);
         this.Row = x;
         this.Col = y;
-        this.Character = character;
     }
-    public move(fields:Field[][], event,context:CanvasRenderingContext2D):number {
+    public move(fields:Field[][], event, context:CanvasRenderingContext2D):number {
         let nextField: Field = null;
         let n = 0
         switch (event.key) {
@@ -187,15 +261,23 @@ function init(){
     const canvas: any = document.getElementById("playground");
     const context: CanvasRenderingContext2D = canvas.getContext("2d");
     let fields:Field[][] = generatePlayground();
-    let pacman = new GameCharacter(FieldType.BlockWithPacman,14,8, GameCharacterType.Pacman);
+    let pacman = new Pacman(FieldType.BlockWithPacman,14,8);
+    let ghost = new Ghost(8,8,FieldType.None);
     let count = 0;
     let playCount = 0;
     drawPlayground(context,fields,playCount,count);
     document.addEventListener("keydown", event =>{
         count += pacman.move(fields,event,context);
+        ghost.moveGhost(fields,context,pacman);
+        if (count == 164){
+            console.log("You won!!!");
+        }
+        else if(ghost.Col == pacman.Col && ghost.Row == pacman.Row){
+            console.log(`You lost!!! Score: ${count}`);
+        }
         playCount++;
         drawPlayground(context,fields,playCount,count);
-        console.log(count);
+        console.log(`Score: ${count}; Pacman(${pacman.Col}|${pacman.Row}); Ghost(${ghost.Col}|${ghost.Row})`);
         event.preventDefault();
     });
 }
