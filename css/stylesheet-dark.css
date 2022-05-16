@@ -1,3 +1,4 @@
+/* Allgemeines */
 .btn-group button {
     font-size: large;
     height: 45px;
@@ -10,7 +11,6 @@
     border-right: none;
     border-bottom: 2px solid #2ECCFA;
     border-left: none;
-
 }
 .btn-group button:hover {
     border-bottom: 5px solid #2ECCFA;
@@ -19,7 +19,27 @@
     border-left: 1px solid #2ECCFA;
     border-top: none;
 }
+img.header{
+    width: 100%;
+    border-bottom: 2px solid #2ECCFA;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
 
+.footer{
+    margin: 0;
+    text-align: center;
+    border-top: 2px solid #2ECCFA;
+    background-color: black;
+}
+.footerP{
+    margin-right: 2em;
+    margin-left: 2em;
+}
 
 article{
     margin: 2em 10%;
@@ -32,8 +52,7 @@ body {
     color: white;
     background-color: #1C1C1C;
 }
-
-body.scrollen{
+body.scroll{
     overflow: hidden;
 }
 
@@ -42,25 +61,23 @@ h2{
     margin-top: 3em;
 }
 
+/* History */
 img.level1{
     float:right;
     margin-right: 10%;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 img.level2{
     float:right;
-    border: 1px solid white;
-    margin-left: 12em;
-    margin-right: 10px;
+    border: 2px solid white;
+    margin-right: 20px;
 }
-img.header{
-    width: 100%;
-    border-bottom: 2px solid #2ECCFA;
-}
+
+/* Rules */
 img.level {
     width: 10em;
-    margin-right: 1em;
-    border: 1px solid white;
+    margin-right: 20px;
+    border: 2px solid white;
 }
 img.ghosts {
     width: 5em;
@@ -88,39 +105,35 @@ td.changeFR {
     width: 70%;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-.footer{
-    margin: 0;
-    text-align: center;
-    border-top: 2px solid #2ECCFA;
-    background-color: black;
-}
-.footerP{
-    margin-right: 2em;
-    margin-left: 2em;
-}
 
 .rules {
     border-radius: 1em;
     border: 2px solid #2ECCFA;
 }
-.changeOA {
-    float:right;
-    border: 1px solid white;
-    margin-left: 2em;
-    margin-right: 5%;
-    height: auto;
+
+/* Change of Appearance */
+.grid-container-COA {
+    display: flex;
+    gap: 20px;
+}
+.gridCOA-item1-img {
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.gridCOA-item2-text {
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    transform: translateY(35px);
 }
 
-table.changeTS {
-    height: 50px;
-}
-
+/* Animation Index */
 #animationIndex {
     bottom: 150px;
     position: fixed;
@@ -150,12 +163,14 @@ table.changeTS {
     }
 }
 
+/* Leonding Logo Footer */
 #htlLeonding {
     width: 150px;
     transform: translate(55px);
 
 }
 
+/* About Us Fooer + Page */
 #aboutUs {
     position: absolute;
     margin-top: 25px;
@@ -165,7 +180,18 @@ table.changeTS {
     font-size: small;
     cursor: pointer;
 }
-#pinkyImgAboutUs {
-    transform: translateX(170px) translateY(-45px);
-    width: 25px;
+
+.grid-container-AboutUS {
+    display: flex;
+    gap: 20px 20px;
+}
+.grid-AboutUs-item1-SophieBöhm {
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.grid-AboutUs-item2-pinkyGhost {
+
 }
