@@ -103,7 +103,7 @@ class Field {
         }
         if (this.fieldType == FieldType.Ghost || this.fieldType == FieldType.NoneWithGhost) {
             let image = new Image(10, 10);
-            image.src = "../../imgs/Blinky.png";
+            image.src = "../imgs/Blinky.png";
             ctx.drawImage(image, x * this.FIELD_SIZE, y * this.FIELD_SIZE, 20, 20);
         }
     }
@@ -190,7 +190,7 @@ class Pacman extends Field {
         let nextField = null;
         let n = 0;
         switch (event.key) {
-            case "ArrowRight":
+            case "d":
                 nextField = fields[this.Row][this.Col + 1];
                 if (nextField.fieldType == FieldType.BlockWithPoint) {
                     n++;
@@ -201,7 +201,7 @@ class Pacman extends Field {
                     this.Col++;
                 }
                 break;
-            case "ArrowLeft":
+            case "a":
                 nextField = fields[this.Row][this.Col - 1];
                 if (nextField.fieldType == FieldType.BlockWithPoint) {
                     n++;
@@ -212,7 +212,7 @@ class Pacman extends Field {
                     this.Col--;
                 }
                 break;
-            case "ArrowUp":
+            case "w":
                 nextField = fields[this.Row - 1][this.Col];
                 if (nextField.fieldType == FieldType.BlockWithPoint) {
                     n++;
@@ -223,7 +223,7 @@ class Pacman extends Field {
                     this.Row--;
                 }
                 break;
-            case "ArrowDown":
+            case "s":
                 nextField = fields[this.Row + 1][this.Col];
                 if (nextField.fieldType == FieldType.BlockWithPoint) {
                     n++;
@@ -257,19 +257,20 @@ function init() {
     let count = 0;
     let playCount = 0;
     drawPlayground(context, fields, playCount, count);
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keyup", event => {
         count += pacman.move(fields, event, context);
         ghost.moveGhost(fields, context, pacman);
-        if (count == 164) {
+        if (count == 154) {
             console.log("You won!!!");
+            location.reload();
         }
         else if (ghost.Col == pacman.Col && ghost.Row == pacman.Row) {
             console.log(`You lost!!! Score: ${count}`);
+            location.reload();
         }
         playCount++;
         drawPlayground(context, fields, playCount, count);
         console.log(`Score: ${count}; Pacman(${pacman.Col}|${pacman.Row}); Ghost(${ghost.Col}|${ghost.Row})`);
-        event.preventDefault();
     });
 }
 document.addEventListener('DOMContentLoaded', (event) => {
