@@ -165,6 +165,7 @@ header {
 
 }
 
+/* About Us */
 #aboutUs {
     position: absolute;
     margin-top: 25px;
@@ -175,7 +176,22 @@ header {
     font-size: small;
     cursor: pointer;
 }
-#pinkyImgAboutUs {
-    transform: translateX(170px) translateY(-45px);
+
+.aboutUs-HeaderLine {
+    font-size: x-large;
+    color: #81BEF7;
+    font-weight: bold;
+}
+
+#aboutUS-Pinky {
     width: 25px;
+    transform: translateY(3px);
+}
+#aboutUs-Inky {
+    width: 27px;
+    transform: translateY(3px);
+}
+#aboutUs-Clyde {
+    width: 27px;
+    transform: translateY(3px);
 }
