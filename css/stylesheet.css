@@ -109,18 +109,18 @@ header {
 }
 
 /* Change of Appearance */
-.grid-container-COA {
+.grid-container-COA-MissPacMan {
     display: flex;
     gap: 20px;
 }
-.gridCOA-item1-img {
+.gridCOA-MissPacMan-item1-img {
     grid-row-start: 1;
     grid-row-end: 2;
 
     grid-column-start: 1;
     grid-column-end: 2;
 }
-.gridCOA-item2-text {
+.gridCOA-MissPacMan-item2-text {
     grid-row-start: 1;
     grid-row-end: 2;
 
