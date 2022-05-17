@@ -103,7 +103,7 @@ class Field {
         }
         if (this.fieldType == FieldType.Ghost || this.fieldType == FieldType.NoneWithGhost) {
             let image = new Image(10, 10);
-            image.src = "https://raw.githubusercontent.com/WMC-AHIF-2021/Pac-Man/master/imgs/Blinky.png";
+            image.src = "imgs/Blinky.png";
             ctx.drawImage(image, x * this.FIELD_SIZE, y * this.FIELD_SIZE, 20, 20);
         }
     }
