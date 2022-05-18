@@ -46,6 +46,8 @@ class Field {
         this.fieldType = type;
     }
     public drawField(ctx:CanvasRenderingContext2D, x:number, y:number,playCount:number){
+        let image = new Image(10,10);
+        image.src = "imgs/Blinky.png";
         ctx.beginPath();
         let color = "black";
         if(this.fieldType == FieldType.Wall){
@@ -104,8 +106,6 @@ class Field {
             }
         }
         if (this.fieldType == FieldType.Ghost || this.fieldType == FieldType.NoneWithGhost){
-            let image = new Image(10,10);
-            image.src = "imgs/Blinky.png";
             ctx.drawImage(image,x*this.FIELD_SIZE,y*this.FIELD_SIZE,20,20);
         }
     }
@@ -265,21 +265,59 @@ function init(){
     let ghost = new Ghost(8,8,FieldType.None);
     let count = 0;
     let playCount = 0;
+
     drawPlayground(context,fields,playCount,count);
+    let image = new Image(50,50);
+    image.src = "imgs/trophae.png";
+    let image2 = new Image(50,50);
+    image2.src = "imgs/Blinky.png";
+    context.font = "20px Arial";
+    context.fillStyle = "white";
+    context.fillText(`Count: ${count}`,0, 525);
+
     document.addEventListener("keyup", event =>{
-        count += pacman.move(fields,event,context);
-        ghost.moveGhost(fields,context,pacman);
+
         if (count == 154){
-            console.log("You won!!!");
-            location.reload();
+            context.clearRect(0,0,canvas.width,canvas.height);
+            context.beginPath();
+            context.fillStyle = "white";
+            context.rect(0,200, canvas.width, 150);
+            context.fill();
+            context.font = "50px Arial";
+            context.fillStyle = "black";
+            context.fillText("You won!!!",20,270,canvas.width);
+            context.font = "12px Arial";
+            context.drawImage(image,300,235,80,80);
+            context.fillText("Tap any Key to continue...", 25,315, canvas.width);
+            document.addEventListener("keyup", event =>{
+                location.reload();
+            });
         }
         else if(ghost.Col == pacman.Col && ghost.Row == pacman.Row){
-            console.log(`You lost!!! Score: ${count}`);
-            location.reload();
+            context.clearRect(0,0,canvas.width,canvas.height);
+            context.beginPath();
+            context.fillStyle = "white";
+            context.rect(0,200, canvas.width, 150);
+            context.fill();
+            context.font = "50px Arial";
+            context.fillStyle = "black";
+            context.fillText("You lost!!!",20,270,canvas.width);
+            context.font = "12px Arial";
+            context.drawImage(image2,300,235,80,80);
+            context.fillText("Tap any Key to continue...", 25,315, canvas.width);
+            document.addEventListener("keyup", event =>{
+                location.reload();
+            });
         }
-        playCount++;
-        drawPlayground(context,fields,playCount,count);
-        console.log(`Score: ${count}; Pacman(${pacman.Col}|${pacman.Row}); Ghost(${ghost.Col}|${ghost.Row})`);
+        else{
+            context.clearRect(0,500,500,50)
+            count += pacman.move(fields,event,context);
+            ghost.moveGhost(fields,context,pacman);
+            context.fillStyle = "white";
+            context.fillText(`Count: ${count}`,0, 525);
+            playCount++;
+            drawPlayground(context,fields,playCount,count);
+        }
     });
 }
 
