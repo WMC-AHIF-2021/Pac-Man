@@ -109,18 +109,18 @@ header {
 }
 
 /* Change of Appearance */
-.grid-container-COA {
+.grid-container-COA-MissPacMan {
     display: flex;
     gap: 20px;
 }
-.gridCOA-item1-img {
+.gridCOA-MissPacMan-item1-img {
     grid-row-start: 1;
     grid-row-end: 2;
 
     grid-column-start: 1;
     grid-column-end: 2;
 }
-.gridCOA-item2-text {
+.gridCOA-MissPacMan-item2-text {
     grid-row-start: 1;
     grid-row-end: 2;
 
@@ -165,6 +165,7 @@ header {
 
 }
 
+/* About Us */
 #aboutUs {
     position: absolute;
     margin-top: 25px;
@@ -175,7 +176,22 @@ header {
     font-size: small;
     cursor: pointer;
 }
-#pinkyImgAboutUs {
-    transform: translateX(170px) translateY(-45px);
+
+.aboutUs-HeaderLine {
+    font-size: x-large;
+    color: #81BEF7;
+    font-weight: bold;
+}
+
+#aboutUS-Pinky {
     width: 25px;
+    transform: translateY(3px);
+}
+#aboutUs-Inky {
+    width: 27px;
+    transform: translateY(3px);
+}
+#aboutUs-Clyde {
+    width: 27px;
+    transform: translateY(3px);
 }
