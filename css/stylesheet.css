@@ -170,9 +170,9 @@ header {
     position: absolute;
     margin-top: 25px;
     transform: translate(-55px);
+    border: none;
     background-color: #D8D8D8;
     color: black;
-    border: none;
     font-size: small;
     cursor: pointer;
 }
