@@ -1,5 +1,5 @@
-import { Ghost } from "../../build/ghost.js";
-import { Field, FieldType } from "../../build/field.js";
+import { Ghost } from "./ghost.js";
+import { Field, FieldType } from "./field.js";
 function generatePlayground() {
     let playground = [
         [new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall), new Field(FieldType.Wall)],

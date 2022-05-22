@@ -1,5 +1,5 @@
-import{Field,FieldType} from "../../build/field.js"
-import{Pacman} from "../../build/pacman.js"
+import{Field,FieldType} from "./field.js"
+import{Pacman} from "./pacman.js"
 
 export class Ghost{
     public Row:number;

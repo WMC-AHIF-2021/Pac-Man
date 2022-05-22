@@ -1,4 +1,4 @@
-import { FieldType } from "../../build/field.js";
+import { FieldType } from "./field.js";
 export class Ghost {
     constructor(row, col, prevField) {
         this.Row = row;
