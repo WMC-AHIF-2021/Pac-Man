@@ -198,3 +198,32 @@ td.changeFR {
     width: 27px;
     transform: translateY(3px);
 }
+
+/* Game */
+#scoresList {
+    all: initial;
+    color: white;
+    border-spacing: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    transform: translateY(-4%);
+}
+#scoresList th {
+    color: #2ECCFA;
+}
+
+#usernameInput {
+    background-color: #1C1C1C;
+    color: white;
+
+    border: none;
+    border-bottom: 1px solid #2ECCFA;
+}
+#usernameInput:focus {
+    color: white;
+
+    outline:none;
+    border: none;
+    border-bottom: 1px solid #2ECCFA;
+}

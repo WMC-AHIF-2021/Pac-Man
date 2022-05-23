@@ -195,3 +195,26 @@ header {
     width: 27px;
     transform: translateY(3px);
 }
+
+/* Game */
+#scoresList {
+    all: initial;
+    border-spacing: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    transform: translateY(-4%);
+}
+#scoresList th {
+    color:  #81BEF7;
+}
+
+#usernameInput {
+    border: none;
+    border-bottom: 1px solid #81BEF7;
+}
+#usernameInput:focus {
+    outline:none;
+    border: none;
+    border-bottom: 1px solid #81BEF7;
+}

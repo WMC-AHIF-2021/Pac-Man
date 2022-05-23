@@ -20,17 +20,22 @@
 		</header>
 		<br>
 		<img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
-		<label style="margin-left: 50%; margin-top: 100px; transform: translateX(-140%)">
-			<input id="usernameInput" type="text" placeholder="enter username">
+		<label style="margin-left: 50%; margin-top: 100px; transform: translateX(-176%)">
+			<input id="usernameInput" type="text" placeholder="Enter username">
 		</label>
 		<article>
 			<div class="container-md">
 				<div class="row">
 					<div class="col-sm d-flex justify-content-center">
 						<canvas id="playground" width="425" height="680" oncontextmenu="return false;"></canvas>
-						<ol id="scoresList" style="margin-left: 40px">
+						<table id="scoresList" style="margin-left: 40px">
+							<tr>
+								<th>Rank</th>
+								<th>Name</th>
+								<th>Score</th>
+							</tr>
 
-						</ol>
+						</table>
 					</div>
 				</div>
 				<div class="row">

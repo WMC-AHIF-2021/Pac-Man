@@ -27,16 +27,16 @@ function getScores() {
         .then(data => {
             data.sort((a, b) => b.score - a.score);
             let html = "";
-            let i = 0;
+            let i = 1;
             for (let currentData of data) {
-                if (i < 5) {
-                    html += "<li>" + currentData.username + ' ' + currentData.score + "</li>"
+                if (i < 6) {
+                    html += "<tr><td>"+ i + "</td><td>" + currentData.username + "</td><td>" + ' ' + currentData.score + "</tr></td>"
                 } else {
                     break;
                 }
                 i++;
             }
-            document.getElementById("scoresList").innerHTML = html;
+            document.getElementById("scoresList").innerHTML += html;
         })
 }
 
