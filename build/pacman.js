@@ -136,6 +136,7 @@ function init() {
             document.addEventListener("keyup", event => {
                 location.reload();
             });
+            sendScoreToServer(count);
         }
         else {
             context.clearRect(0, 500, 500, 50);

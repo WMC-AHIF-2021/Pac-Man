@@ -20,11 +20,17 @@
 		</header>
 		<br>
 		<img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
-		<article style="transform: translateY(12%)">
+		<label style="margin-left: 50%; margin-top: 100px; transform: translateX(-122%)">
+			<input id="usernameInput" type="text" placeholder="enter username">
+		</label>
+		<article>
 			<div class="container-md">
 				<div class="row">
 					<div class="col-sm d-flex justify-content-center">
 						<canvas id="playground" width="425" height="680" oncontextmenu="return false;"></canvas>
+						<ol id="scoresList" style="margin-left: 40px">
+
+						</ol>
 					</div>
 				</div>
 				<div class="row">
@@ -51,5 +57,6 @@
 		</div>
 		<script src="src/scripts/loadingScreen.js"></script>
 		<script src="src/scripts/darkmode.js"></script>
+		<script src="build/scores.js"></script>
 	</body>
 </html>
