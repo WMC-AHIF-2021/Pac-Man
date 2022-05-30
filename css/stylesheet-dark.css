@@ -277,7 +277,7 @@ td.changeFR {
     display: none;
     position: fixed;
     background-color: black;
-    opacity: 0.4;
+    opacity: 0.3;
 
     z-index: 2;
     padding: 100vw 100vh;
