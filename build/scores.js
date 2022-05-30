@@ -43,7 +43,7 @@ let popUp = document.getElementById("popUp-Username");
 let bgDarkener = document.getElementById("bgDarkener");
 function checkUsername() {
     let username = document.getElementById("usernameInput").value;
-    if (username == "" && !isPopUpOpen) {
+    if (username == "" && !isPopUpOpen || username[0] == " " && !isPopUpOpen) {
         let html = "<h2>Please enter username!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
         popUp.style.display = "block";
         popUp.innerHTML += html;
