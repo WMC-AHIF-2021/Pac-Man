@@ -119,15 +119,19 @@ function init(){
     context.fillText(`Count: ${count}`,0, 525);
 
     document.addEventListener("keyup", event =>{
+        if (isPopUpOpen) return;
+
         if (count%154 == 0 && drawagain){
-            fields = generatePlayground();
-            pacman.Col = 8;
-            pacman.Row = 14;
-            ghost.Col = 8;
-            ghost.Row = 8;
-            ghost.PrevField = FieldType.None;
-            drawPlayground(context,fields,playCount,count);
-            drawagain = false;
+            if (checkUsername()) {
+                fields = generatePlayground();
+                pacman.Col = 8;
+                pacman.Row = 14;
+                ghost.Col = 8;
+                ghost.Row = 8;
+                ghost.PrevField = FieldType.None;
+                drawPlayground(context, fields, playCount, count);
+                drawagain = false;
+            }
         }
         else if(ghost.Col == pacman.Col && ghost.Row == pacman.Row){
             context.clearRect(0,0,canvas.width,canvas.height);
