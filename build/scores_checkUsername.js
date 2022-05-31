@@ -1,10 +1,8 @@
 let alreadySent = false;
 function sendScoreToServer(score) {
-    if (alreadySent) {
+    if (alreadySent)
         return;
-    }
     let username = document.getElementById("usernameInput").value;
-    alreadySent = true;
     const data = {
         username: username,
         score: score
@@ -18,9 +16,10 @@ function sendScoreToServer(score) {
     }).then(response => {
         console.log(response);
     });
+    alreadySent = true;
 }
-function deleteScore(id) {
-    fetch("http://45.81.235.93:5000/scores" + "/" + id, {
+function deleteScore(data) {
+    fetch("http://45.81.235.93:5000/scores" + "/" + data.id, {
         method: "DELETE"
     }).then(response => {
         console.log(response);
@@ -39,7 +38,7 @@ function getScores() {
                 html += "<tr><td>" + i + "</td><td>" + currentData.username + "</td><td>" + ' ' + currentData.score + "</tr></td>";
             }
             else {
-                deleteScore(i);
+                deleteScore(currentData);
             }
             i++;
         }
