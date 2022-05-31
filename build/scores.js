@@ -55,6 +55,10 @@ function checkUsername() {
         isPopUpOpen = true;
         return false;
     }
+    if (username != "" && !isPopUpOpen || username.length > 8) {
+        let html = "<h2>Username too long!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
+        popUp.innerHTML += html;
+    }
     return true;
 }
 function popUpButtonClicked() {
