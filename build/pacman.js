@@ -37,10 +37,18 @@ export class Pacman extends Field {
         switch (event.key) {
             case "d":
                 nextField = fields[this.Row][this.Col + 1];
-                if (nextField.fieldType == FieldType.BlockWithPoint) {
+                if (nextField == null) {
                     n++;
                 }
-                if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
+                else if (nextField.fieldType == FieldType.BlockWithPoint) {
+                    n++;
+                }
+                if (this.Col == fields[this.Row].length - 1) {
+                    fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
+                    fields[this.Row][0].fieldType = FieldType.BlockWithPacmanRight;
+                    this.Col = 0;
+                }
+                else if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
                     fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
                     fields[this.Row][this.Col + 1].fieldType = FieldType.BlockWithPacmanRight;
                     this.Col++;
@@ -48,10 +56,18 @@ export class Pacman extends Field {
                 break;
             case "a":
                 nextField = fields[this.Row][this.Col - 1];
-                if (nextField.fieldType == FieldType.BlockWithPoint) {
+                if (nextField == null) {
                     n++;
                 }
-                if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
+                else if (nextField.fieldType == FieldType.BlockWithPoint) {
+                    n++;
+                }
+                if (this.Col == 0) {
+                    fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
+                    fields[this.Row][fields[this.Row].length - 1].fieldType = FieldType.BlockWithPacmanLeft;
+                    this.Col = fields[this.Row].length - 1;
+                }
+                else if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
                     fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
                     fields[this.Row][this.Col - 1].fieldType = FieldType.BlockWithPacmanLeft;
                     this.Col--;
@@ -111,15 +127,19 @@ function init() {
     context.fillStyle = "white";
     context.fillText(`Count: ${count}`, 0, 525);
     document.addEventListener("keyup", event => {
+        if (isPopUpOpen)
+            return;
         if (count % 154 == 0 && drawagain) {
-            fields = generatePlayground();
-            pacman.Col = 8;
-            pacman.Row = 14;
-            ghost.Col = 8;
-            ghost.Row = 8;
-            ghost.PrevField = FieldType.None;
-            drawPlayground(context, fields, playCount, count);
-            drawagain = false;
+            if (checkUsername()) {
+                fields = generatePlayground();
+                pacman.Col = 8;
+                pacman.Row = 14;
+                ghost.Col = 8;
+                ghost.Row = 8;
+                ghost.PrevField = FieldType.None;
+                drawPlayground(context, fields, playCount, count);
+                drawagain = false;
+            }
         }
         else if (ghost.Col == pacman.Col && ghost.Row == pacman.Row) {
             context.clearRect(0, 0, canvas.width, canvas.height);
