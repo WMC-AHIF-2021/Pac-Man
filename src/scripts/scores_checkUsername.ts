@@ -68,6 +68,13 @@ function checkUsername(): boolean {
         isPopUpOpen = true;
         return false;
     }
+    if (username.length > 8) {
+        let html = "<h2>Please enter username!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
+        popUp.style.display = "block";
+        popUp.innerHTML += html;
+        isPopUpOpen = true;
+        return false;
+    }
     return true;
 }
 
