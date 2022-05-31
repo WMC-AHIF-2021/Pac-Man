@@ -28,6 +28,7 @@ function getScores() {
         let i = 1;
         for (let currentData of data) {
             if (i < 11) {
+                currentData.username = currentData.username.replace(/</g, "&lt;").replace(/>/g, "&gt;");
                 html += "<tr><td>" + i + "</td><td>" + currentData.username + "</td><td>" + ' ' + currentData.score + "</tr></td>";
             }
             else {
