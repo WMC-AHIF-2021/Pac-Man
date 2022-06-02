@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PaMan-Multiplayer</title>
+  <title>PacMan-Multiplayer</title>
 </head>
 <body style="background-color: gray">
 <canvas id="playground" width="525" height="600">
   <div style="display: none">
       <img id="imgPacManClose" src="/imgs/Game/Pac-Man/Temp.png" alt="imgGame-close">
       <img id="imgPacManOpen" src="/imgs/Game/Pac-Man/Right.png" alt="imgGame-open">
+
+      <img id="imgGhost" src="/imgs/Blinky.png" alt="imgGame-ghost">
   </div>
 
 </canvas>
 
+<script src="http://fos.the-changer.net/socket.io/socket.io.js"></script>
+<script src="/src/scripts/onlineMultiplayer/communication.js"></script>
 <script src="/build/onlineMultiplayer/game.js"></script>
 </body>
 </html>
