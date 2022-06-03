@@ -68,13 +68,22 @@ function checkUsername(): boolean {
         isPopUpOpen = true;
         return false;
     }
-    if (username.length > 8) {
-        let html = "<h2>Please enter username!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
-        popUp.style.display = "block";
-        popUp.innerHTML += html;
-        isPopUpOpen = true;
-        return false;
-    }
+
+    document.addEventListener("keydown", function (e) {
+        let username = (<HTMLInputElement>document.getElementById("usernameInput")).value;
+        if (e.key != "Backspace" && !isPopUpOpen && username.length > 8) {
+            let html = "<h2>Username too long!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
+            popUp.style.display = "block";
+            popUp.innerHTML += html;
+
+            bgDarkener.style.display = "block";
+            setTimeout(() => {
+                popUp.style.transform = "translateX(-50%)"
+            }, 5)
+            isPopUpOpen = true;
+            return false;
+        }
+    })
     return true;
 }
 
