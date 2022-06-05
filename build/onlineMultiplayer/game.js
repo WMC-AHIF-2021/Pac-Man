@@ -1,26 +1,27 @@
-var fieldType;
-(function (fieldType) {
-    fieldType[fieldType["wall"] = 0] = "wall";
-    fieldType[fieldType["ground"] = 1] = "ground";
-    fieldType[fieldType["groundPoint"] = 2] = "groundPoint";
-    fieldType[fieldType["ghostField"] = 3] = "ghostField";
-})(fieldType || (fieldType = {}));
+var FieldType;
+(function (FieldType) {
+    FieldType[FieldType["wall"] = 0] = "wall";
+    FieldType[FieldType["ground"] = 1] = "ground";
+    FieldType[FieldType["groundPoint"] = 2] = "groundPoint";
+    FieldType[FieldType["ghostField"] = 3] = "ghostField";
+})(FieldType || (FieldType = {}));
 let playground = document.getElementById("playground");
 let ctx = playground.getContext("2d");
 let pacMan;
 let ghost;
 let isPacMan = false;
+let isGhost = false;
 function init() {
     let renderer = new Renderer();
     let field = renderer.field;
     pacMan = new PacMan(242, 422, 10, 10);
-    ghost = new Ghost(242, 240, 10, 10);
+    ghost = new Ghost(242, 242, 10, 10);
     document.addEventListener("keydown", function (e) {
         if (e.key == "ArrowLeft") {
             if (isPacMan) {
                 pacMan.currentDirection = Direction.left;
             }
-            else {
+            if (isGhost) {
                 ghost.currentDirection = Direction.left;
             }
         }
@@ -28,7 +29,7 @@ function init() {
             if (isPacMan) {
                 pacMan.currentDirection = Direction.right;
             }
-            else {
+            if (isGhost) {
                 ghost.currentDirection = Direction.right;
             }
         }
@@ -36,7 +37,7 @@ function init() {
             if (isPacMan) {
                 pacMan.currentDirection = Direction.up;
             }
-            else {
+            if (isGhost) {
                 ghost.currentDirection = Direction.up;
             }
         }
@@ -44,7 +45,7 @@ function init() {
             if (isPacMan) {
                 pacMan.currentDirection = Direction.down;
             }
-            else {
+            if (isGhost) {
                 ghost.currentDirection = Direction.down;
             }
         }
@@ -53,9 +54,12 @@ function init() {
         renderer.drawField();
         if (isPacMan) {
             pacMan.move(renderer.width, renderer.height, field);
+            pacMan.win();
         }
-        else {
+        if (isGhost) {
             ghost.move(renderer.width, renderer.height, field);
+            ghost.win(pacMan.x, pacMan.y);
+            ghost.overrideField(field, Math.round(pacMan.x / renderer.width), Math.round(pacMan.y / renderer.height));
         }
         pacMan.draw();
         ghost.draw();
@@ -78,7 +82,7 @@ class Renderer {
             [0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0],
             [0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0],
             [0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0],
-            [0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0],
+            [0, 2, 2, 0, 2, 2, 2, 2, 1, 2, 2, 2, 2, 0, 2, 2, 0],
             [0, 0, 2, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0],
             [0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0],
             [0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 2, 0],
@@ -95,17 +99,17 @@ class Renderer {
         for (let x = 0; x < this.field[0].length; x++) {
             for (let y = 0; y < this.field.length; y++) {
                 switch (this.field[y][x]) {
-                    case fieldType.wall:
+                    case FieldType.wall:
                         this.drawFieldType("#0431B4", x, y, this.width, this.height);
                         break;
-                    case fieldType.ground:
+                    case FieldType.ground:
                         this.drawFieldType("black", x, y, this.width, this.height);
                         break;
-                    case fieldType.groundPoint:
+                    case FieldType.groundPoint:
                         this.drawFieldType("black", x, y, this.width, this.height);
                         this.drawSquare(x, y, this.width, this.height);
                         break;
-                    case fieldType.ghostField:
+                    case FieldType.ghostField:
                         this.drawFieldType("white", x, y, this.width, this.height);
                         break;
                 }
@@ -147,6 +151,14 @@ class Ghost {
     }
     // noinspection TypeScriptUnresolvedFunction
     move(width, height, field) {
+        let fieldPositionX = Math.round(this.x / width);
+        let fieldPositionY = Math.round(this.y / height);
+        if (fieldPositionX == 16 && fieldPositionY == 9 && this.currentDirection == Direction.right) {
+            this.x = (0 - width) + 4;
+        }
+        if (fieldPositionX == 0 && fieldPositionY == 9 && this.currentDirection == Direction.left) {
+            this.x = (((16 * width) - this.width) + width) - 4;
+        }
         if (!this.isOverlapping(width, height, field)) {
             switch (this.currentDirection) {
                 case Direction.up:
@@ -169,25 +181,23 @@ class Ghost {
         sendGhostPos(this.x, this.y);
     }
     isOverlapping(width, height, field) {
-        let fieldPositionX = this.x / width;
-        fieldPositionX = Math.round(fieldPositionX);
-        let fieldPositionY = this.y / height;
-        fieldPositionY = Math.round(fieldPositionY);
+        let fieldPositionX = Math.round(this.x / width);
+        let fieldPositionY = Math.round(this.y / height);
         switch (this.currentDirection) {
             case Direction.up:
-                if (field[fieldPositionY - 1][fieldPositionX] == fieldType.groundPoint || field[fieldPositionY - 1][fieldPositionX] == fieldType.ground)
+                if (field[fieldPositionY - 1][fieldPositionX] == FieldType.groundPoint || field[fieldPositionY - 1][fieldPositionX] == FieldType.ground)
                     return false;
                 break;
             case Direction.left:
-                if (field[fieldPositionY][fieldPositionX - 1] == fieldType.groundPoint || field[fieldPositionY][fieldPositionX - 1] == fieldType.ground)
+                if (field[fieldPositionY][fieldPositionX - 1] == FieldType.groundPoint || field[fieldPositionY][fieldPositionX - 1] == FieldType.ground)
                     return false;
                 break;
             case Direction.right:
-                if (field[fieldPositionY][fieldPositionX + 1] == fieldType.groundPoint || field[fieldPositionY][fieldPositionX + 1] == fieldType.ground)
+                if (field[fieldPositionY][fieldPositionX + 1] == FieldType.groundPoint || field[fieldPositionY][fieldPositionX + 1] == FieldType.ground)
                     return false;
                 break;
             case Direction.down:
-                if (field[fieldPositionY + 1][fieldPositionX] == fieldType.groundPoint || field[fieldPositionY + 1][fieldPositionX] == fieldType.ground)
+                if (field[fieldPositionY + 1][fieldPositionX] == FieldType.groundPoint || field[fieldPositionY + 1][fieldPositionX] == FieldType.ground)
                     return false;
                 break;
             default:
@@ -195,22 +205,67 @@ class Ghost {
         }
         return true;
     }
+    overrideField(field, fieldPositionX, fieldPositionY) {
+        if (field[fieldPositionY][fieldPositionX] != FieldType.ground) {
+            field[fieldPositionY][fieldPositionX] = 1;
+        }
+    }
+    win(x, y) {
+        if (this.x == x && this.y == y) {
+            // @ts-ignore
+            ghostWinner();
+        }
+    }
 }
 class PacMan {
     constructor(x, y, width, height) {
         this.currentDirection = Direction.none;
+        this.score = 0;
         this._pacManCloseImg = document.getElementById("imgPacManClose");
-        this._pacManOpenImg = document.getElementById("imgPacManOpen");
+        this._pacManRightImg = document.getElementById("imgPacManRight");
+        this._pacManLeftImg = document.getElementById("imgPacManLeft");
+        this._pacManUpImg = document.getElementById("imgPacManUp");
+        this._pacManDownImg = document.getElementById("imgPacManDown");
+        this._isOpen = false;
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
     }
     draw() {
-        ctx.drawImage(this._pacManCloseImg, this.x, this.y, 25, 25);
-        // ctx.drawImage(this._pacManOpenImg, 100, 4, 25, 25);
+        if (this.currentDirection == Direction.none) {
+            ctx.drawImage(this._pacManCloseImg, this.x, this.y, 25, 25);
+        }
+        else if (this._isOpen) {
+            ctx.drawImage(this._pacManCloseImg, this.x, this.y, 25, 25);
+            this._isOpen = false;
+        }
+        else if (!this._isOpen && this.currentDirection == Direction.right) {
+            ctx.drawImage(this._pacManRightImg, this.x, this.y, 25, 25);
+            this._isOpen = true;
+        }
+        else if (!this._isOpen && this.currentDirection == Direction.left) {
+            ctx.drawImage(this._pacManLeftImg, this.x, this.y, 25, 25);
+            this._isOpen = true;
+        }
+        else if (!this._isOpen && this.currentDirection == Direction.up) {
+            ctx.drawImage(this._pacManUpImg, this.x, this.y, 25, 25);
+            this._isOpen = true;
+        }
+        else if (!this._isOpen && this.currentDirection == Direction.down) {
+            ctx.drawImage(this._pacManDownImg, this.x, this.y, 25, 25);
+            this._isOpen = true;
+        }
     }
     move(width, height, field) {
+        let fieldPositionX = Math.round(this.x / width);
+        let fieldPositionY = Math.round(this.y / height);
+        if (fieldPositionX == 16 && fieldPositionY == 9 && this.currentDirection == Direction.right) {
+            this.x = (0 - width) + 4;
+        }
+        if (fieldPositionX == 0 && fieldPositionY == 9 && this.currentDirection == Direction.left) {
+            this.x = (((16 * width) - this.width) + width) - 4;
+        }
         if (!this.isOverlapping(width, height, field)) {
             switch (this.currentDirection) {
                 case Direction.up:
@@ -228,49 +283,58 @@ class PacMan {
                 default:
                     break;
             }
-            let fieldPositionX = this.x / width;
-            fieldPositionX = Math.round(fieldPositionX);
-            let fieldPositionY = this.y / height;
-            fieldPositionY = Math.round(fieldPositionY);
+            let fieldPositionX = Math.round(this.x / width);
+            let fieldPositionY = Math.round(this.y / height);
             this.overrideField(field, fieldPositionX, fieldPositionY);
             // @ts-ignore
-            sendPacManPos(this.x, this.y);
+            sendPacManPos(this.x, this.y, this.currentDirection);
         }
     }
     isOverlapping(width, height, field) {
-        let fieldPositionX = this.x / width;
-        fieldPositionX = Math.round(fieldPositionX);
-        let fieldPositionY = this.y / height;
-        fieldPositionY = Math.round(fieldPositionY);
+        let fieldPositionX = Math.round(this.x / width);
+        let fieldPositionY = Math.round(this.y / height);
         switch (this.currentDirection) {
             case Direction.up:
-                if (field[fieldPositionY - 1][fieldPositionX] == fieldType.groundPoint || field[fieldPositionY - 1][fieldPositionX] == fieldType.ground)
+                if (field[fieldPositionY - 1][fieldPositionX] == FieldType.groundPoint || field[fieldPositionY - 1][fieldPositionX] == FieldType.ground)
                     return false;
                 break;
             case Direction.left:
-                if (field[fieldPositionY][fieldPositionX - 1] == fieldType.groundPoint || field[fieldPositionY][fieldPositionX - 1] == fieldType.ground)
+                if (field[fieldPositionY][fieldPositionX - 1] == FieldType.groundPoint || field[fieldPositionY][fieldPositionX - 1] == FieldType.ground)
                     return false;
                 break;
             case Direction.right:
-                if (field[fieldPositionY][fieldPositionX + 1] == fieldType.groundPoint || field[fieldPositionY][fieldPositionX + 1] == fieldType.ground)
+                if (field[fieldPositionY][fieldPositionX + 1] == FieldType.groundPoint || field[fieldPositionY][fieldPositionX + 1] == FieldType.ground)
                     return false;
                 break;
             case Direction.down:
-                if (field[fieldPositionY + 1][fieldPositionX] == fieldType.groundPoint || field[fieldPositionY + 1][fieldPositionX] == fieldType.ground)
+                if (field[fieldPositionY + 1][fieldPositionX] == FieldType.groundPoint || field[fieldPositionY + 1][fieldPositionX] == FieldType.ground)
                     return false;
                 break;
             default:
                 break;
         }
+        this.currentDirection = Direction.none;
+        // @ts-ignore
+        sendPacManPos(this.x, this.y, this.currentDirection);
         return true;
     }
     overrideField(field, fieldPositionX, fieldPositionY) {
-        field[fieldPositionY][fieldPositionX] = 1;
+        if (field[fieldPositionY][fieldPositionX] != FieldType.ground) {
+            field[fieldPositionY][fieldPositionX] = 1;
+            this.score++;
+        }
+    }
+    win() {
+        if (this.score == 164) {
+            // @ts-ignore
+            pacManWinner();
+        }
     }
 }
-function setPacManPos(x, y) {
+function setPacManPos(x, y, currentDirection) {
     pacMan.x = x;
     pacMan.y = y;
+    pacMan.currentDirection = currentDirection;
 }
 function setGhostPos(x, y) {
     ghost.x = x;
