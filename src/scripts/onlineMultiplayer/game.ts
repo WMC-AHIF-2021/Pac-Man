@@ -190,10 +190,10 @@ class Ghost implements Entity {
         let fieldPositionX = Math.round(this.x / width);
         let fieldPositionY = Math.round(this.y / height);
         if (fieldPositionX == 16 && fieldPositionY == 9 && this.currentDirection == Direction.right) {
-            this.x = (0 - width) + 4;
+            this.x = (0 - width) + 3;
         }
         if (fieldPositionX == 0 && fieldPositionY == 9 && this.currentDirection == Direction.left) {
-            this.x = (((16 * width) - this.width) + width) - 4;
+            this.x = (((16 * width) - this.width) + width) - 3;
         }
 
         if (!this.isOverlapping(width, height, field)) {
@@ -214,6 +214,7 @@ class Ghost implements Entity {
                     break;
             }
         }
+        this.x = Math.round(this.x);
         // @ts-ignore
         sendGhostPos(this.x, this.y);
     }
@@ -312,10 +313,10 @@ class PacMan implements Entity {
         let fieldPositionX = Math.round(this.x / width);
         let fieldPositionY = Math.round(this.y / height);
         if (fieldPositionX == 16 && fieldPositionY == 9 && this.currentDirection == Direction.right) {
-            this.x = (0 - width) + 4;
+            this.x = (0 - width) + 3;
         }
         if (fieldPositionX == 0 && fieldPositionY == 9 && this.currentDirection == Direction.left) {
-            this.x = (((16 * width) - this.width) + width) - 4;
+            this.x = (((16 * width) - this.width) + width) - 3;
         }
 
         if (!this.isOverlapping(width, height, field)) {
