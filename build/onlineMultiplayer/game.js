@@ -287,6 +287,7 @@ class PacMan {
             let fieldPositionX = Math.round(this.x / width);
             let fieldPositionY = Math.round(this.y / height);
             this.overrideField(field, fieldPositionX, fieldPositionY);
+            this.x = Math.round(this.x);
             // @ts-ignore
             sendPacManPos(this.x, this.y, this.currentDirection);
         }
