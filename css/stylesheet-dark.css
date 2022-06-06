@@ -204,9 +204,16 @@ td.changeFR {
 }
 
 /* Game */
+#descriptionSinglePlayer {
+    margin-top: 10px;
+    margin-left: 31%;
+    margin-bottom: 50px;
+    color: #DDDDDD;
+}
+
 #scoresList {
     all: initial;
-    color: white;
+    color: #DDDDDD;
     border-spacing: 25px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -285,4 +292,16 @@ td.changeFR {
 
     z-index: 2;
     padding: 100vw 100vh;
+}
+
+#gameModes {
+    color: white;
+    background-color: #1C1C1C;
+    border: none;
+    transform: translateY(70px);
+    margin-left: 50vw;
+    margin-bottom: 50px;
+}
+#gameModes:focus {
+    outline: none;
 }

@@ -22,20 +22,21 @@
 		<br>
 		<img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
 
-
-	<label for="gameModes">
-		<select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
-				<option value="pacman-game.html">Single-Player</option>
-				<option value="multiplayer">Multiplayer</option>
-				<option value="src/onlineMultiplayerGame.html">Test</option>
-		</select>
-	</label>
-
+		<label for="gameModes">
+			<select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
+					<option value="pacman-game.html">Single-Player</option>
+					<option value="multiplayer">Multiplayer</option>
+					<option value="src/onlineMultiplayerGame.html">Online Multiplayer</option>
+			</select>
+		</label>
+		<br>
 
 		<label style="margin-left: 50%; margin-top: 100px; transform: translateX(-183%)">
 			<input id="usernameInput" type="text" placeholder="Enter username">
 		</label>
 		<div id="popUp-Username"></div>
+		<p id="descriptionSinglePlayer"><small>Run away and collect as many points as you can!</small></p>
+
 		<article>
 			<div class="container-md">
 				<div class="row">

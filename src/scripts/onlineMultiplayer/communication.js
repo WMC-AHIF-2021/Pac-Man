@@ -1,4 +1,6 @@
-let socket = io("fos.the-changer.net");
+let socket = io("https://pacman.the-chagner.net", {
+    secure: true
+});
 
 socket.on("youAreGhost", function() {
     console.log("test");
