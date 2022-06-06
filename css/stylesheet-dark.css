@@ -53,7 +53,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 150%;
-    color: white;
+    color: #DDDDDD;
     background-color: #1C1C1C;
 }
 body.scroll{
@@ -295,7 +295,7 @@ td.changeFR {
 }
 
 #gameModes {
-    color: white;
+    color: #DDDDDD;
     background-color: #1C1C1C;
     border: none;
     transform: translateY(70px);

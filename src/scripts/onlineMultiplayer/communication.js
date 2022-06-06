@@ -1,4 +1,4 @@
-let socket = io("https://pacman.the-chagner.net", {
+let socket = io("https://pacman.the-changer.net", {
     secure: true
 });
 
