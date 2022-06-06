@@ -291,6 +291,7 @@ class PacMan {
             // @ts-ignore
             sendPacManPos(this.x, this.y, this.currentDirection);
         }
+        this.x = Math.round(this.x);
     }
     isOverlapping(width, height, field) {
         let fieldPositionX = Math.round(this.x / width);

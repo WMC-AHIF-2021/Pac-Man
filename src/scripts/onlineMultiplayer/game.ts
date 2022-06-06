@@ -345,6 +345,7 @@ class PacMan implements Entity {
             // @ts-ignore
             sendPacManPos(this.x, this.y, this.currentDirection);
         }
+        this.x = Math.round(this.x);
     }
 
     public isOverlapping(width: number, height: number, field: FieldType[][]): boolean {
