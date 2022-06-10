@@ -167,7 +167,7 @@ function init(mode: string){
             sendScoreToServer(count);
         }
         else{
-            if(mode === "double"){
+            /*if(mode === "double"){
                 context.clearRect(0,500,500,50)
                 count += pacman.move(fields,event,context);
                 ghost.moveTwoPlayers(fields,pacman);
@@ -186,11 +186,15 @@ function init(mode: string){
                 playCount++;
                 drawPlayground(context,fields,playCount,count);
                 drawagain = true;
-            }
+            }*/
+            context.clearRect(0,500,500,50)
+            count += pacman.move(fields,event,context);
+            ghost.moveGhost(fields,pacman);
+            context.fillStyle = "white";
+            context.fillText(`Count: ${count}`,0, 525);
+            playCount++;
+            drawPlayground(context,fields,playCount,count);
+            drawagain = true;
         }
     });
 }
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    init("");
-});

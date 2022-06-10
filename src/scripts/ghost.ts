@@ -10,7 +10,7 @@ export class Ghost{
         this.Col = col;
         this.PrevField = prevField;
     }
-    public moveTwoPlayers(fields:Field[][], event){
+    /*public moveTwoPlayers(fields:Field[][], event){
         let nextField: Field = null;
         let n = 0
         switch (event.key) {
@@ -60,7 +60,7 @@ export class Ghost{
                 break;
         }
         return n;
-    }
+    }*/
     private  moveCol(fields:Field[][], pacman:Pacman):boolean{
         let alreadyMoved:boolean = false;
         if (this.Col - pacman.Col < 0){
