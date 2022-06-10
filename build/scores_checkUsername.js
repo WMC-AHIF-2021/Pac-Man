@@ -1,10 +1,8 @@
 let alreadySent = false;
 function sendScoreToServer(score) {
-    if (alreadySent) {
+    if (alreadySent)
         return;
-    }
     let username = document.getElementById("usernameInput").value;
-    alreadySent = true;
     const data = {
         username: username,
         score: score
@@ -15,6 +13,14 @@ function sendScoreToServer(score) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
+    }).then(response => {
+        console.log(response);
+    });
+    alreadySent = true;
+}
+function deleteScore(data) {
+    fetch("http://45.81.235.93:5000/scores" + "/" + data.id, {
+        method: "DELETE"
     }).then(response => {
         console.log(response);
     });
@@ -32,7 +38,7 @@ function getScores() {
                 html += "<tr><td>" + i + "</td><td>" + currentData.username + "</td><td>" + ' ' + currentData.score + "</tr></td>";
             }
             else {
-                break;
+                deleteScore(currentData);
             }
             i++;
         }
@@ -55,10 +61,20 @@ function checkUsername() {
         isPopUpOpen = true;
         return false;
     }
-    if (username != "" && !isPopUpOpen || username.length > 8) {
-        let html = "<h2>Username too long!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
-        popUp.innerHTML += html;
-    }
+    document.addEventListener("keydown", function (e) {
+        let username = document.getElementById("usernameInput").value;
+        if (e.key != "Backspace" && !isPopUpOpen && username.length > 8) {
+            let html = "<h2>Username too long!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
+            popUp.style.display = "block";
+            popUp.innerHTML += html;
+            bgDarkener.style.display = "block";
+            setTimeout(() => {
+                popUp.style.transform = "translateX(-50%)";
+            }, 5);
+            isPopUpOpen = true;
+            return false;
+        }
+    });
     return true;
 }
 function popUpButtonClicked() {
@@ -73,4 +89,4 @@ function popUpButtonClicked() {
 window.addEventListener("load", function () {
     getScores();
 });
-//# sourceMappingURL=scores.js.map
+//# sourceMappingURL=scores_checkUsername.js.map

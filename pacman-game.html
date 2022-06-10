@@ -21,7 +21,17 @@
 		</header>
 		<br>
 		<img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
-		<label style="margin-left: 50%; margin-top: 100px; transform: translateX(-192%)">
+
+		<label for="gameModes">
+			<select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
+					<option value="pacman-game.html">Single-Player</option>
+					<option value="multiplayer">Multiplayer</option>
+					<option value="src/onlineMultiplayerGame.html">Online Multiplayer</option>
+			</select>
+		</label>
+		<br>
+
+		<label style="margin-left: 50%; margin-top: 100px; transform: translateX(-183%)">
 			<input id="usernameInput" type="text" placeholder="Enter username">
 		</label>
 		<div id="popUp-Username"></div>
@@ -68,6 +78,6 @@
 		</div>
 		<script src="src/scripts/loadingScreen.js"></script>
 		<script src="src/scripts/darkmode.js"></script>
-		<script src="build/scores.js"></script>
+		<script src="build/scores_checkUsername.js"></script>
 	</body>
 </html>
