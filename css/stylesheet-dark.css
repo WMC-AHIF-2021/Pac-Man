@@ -215,6 +215,7 @@ td.changeFR {
 .grid-item2-gamePage { grid-area: gamePage-text; }
 .grid-item3-gamePage { grid-area: canvasSinglePlayer; }
 .grid-item4-gamePage { grid-area: scores; }
+.grid-item5-gamePage { grid-area: score; }
 
 .grid-container-GamePage {
     margin-top: 100px;
@@ -223,7 +224,8 @@ td.changeFR {
     grid-template-areas:
             'usernameInput scores'
             'gamePage-text scores'
-            'canvasSinglePlayer scores';
+            'canvasSinglePlayer scores'
+            'score scores';
 }
 .grid-container-GamePage > div{
     margin-bottom: 10px;
@@ -278,6 +280,7 @@ td.changeFR {
     font-size: x-large;
     color: white;
     border-bottom: 2px solid #585858;
+    font-weight: normal;
 }
 #popUp button {
     margin-top: 20px;
@@ -343,10 +346,11 @@ td.changeFR {
             'text'
             'canvas';
 }
-.grid-container-onlineMultiplayer > div{
+.grid-container-onlineMultiplayer > div {
     margin-bottom: 10px;
 }
 
+/* local multiplayer */
 .popUp-Message {
     display: none;
     position: fixed;

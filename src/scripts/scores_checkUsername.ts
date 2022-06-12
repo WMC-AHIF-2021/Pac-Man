@@ -54,7 +54,7 @@ function getScores() {
 }
 
 let isPopUpOpen:boolean = false;
-let popUp = document.getElementById("popUp-Username");
+let popUp = document.getElementById("popUp");
 let bgDarkener = document.getElementById("bgDarkener");
 function checkUsername(): boolean {
     let username = (<HTMLInputElement>document.getElementById("usernameInput")).value;

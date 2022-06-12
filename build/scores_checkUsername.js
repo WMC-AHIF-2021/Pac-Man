@@ -50,7 +50,7 @@ function getScores() {
     });
 }
 let isPopUpOpen = false;
-let popUp = document.getElementById("popUp-Username");
+let popUp = document.getElementById("popUp");
 let bgDarkener = document.getElementById("bgDarkener");
 function checkUsername() {
     let username = document.getElementById("usernameInput").value;
