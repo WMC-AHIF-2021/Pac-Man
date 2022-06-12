@@ -5,57 +5,6 @@ export class Ghost {
         this.Col = col;
         this.PrevField = prevField;
     }
-    /*public moveTwoPlayers(fields:Field[][], event){
-        let nextField: Field = null;
-        let n = 0
-        switch (event.key) {
-            case "ö":
-                nextField = fields[this.Row][this.Col + 1];
-                if (nextField.fieldType == FieldType.BlockWithPoint) {
-                    n++;
-                }
-                if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
-                    fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row][this.Col + 1].fieldType = FieldType.BlockWithPacmanRight;
-                    this.Col++;
-                }
-                break;
-            case "k":
-                nextField = fields[this.Row][this.Col - 1];
-                if (nextField.fieldType == FieldType.BlockWithPoint) {
-                    n++;
-                }
-                if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
-                    fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row][this.Col - 1].fieldType = FieldType.BlockWithPacmanLeft;
-                    this.Col--;
-                }
-                break;
-            case "o":
-                nextField = fields[this.Row - 1][this.Col];
-                if (nextField.fieldType == FieldType.BlockWithPoint) {
-                    n++;
-                }
-                if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
-                    fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row - 1][this.Col].fieldType = FieldType.BlockWithPacmanUp;
-                    this.Row--;
-                }
-                break;
-            case "l":
-                nextField = fields[this.Row + 1][this.Col];
-                if (nextField.fieldType == FieldType.BlockWithPoint) {
-                    n++;
-                }
-                if (nextField.fieldType != FieldType.Wall && nextField.fieldType != FieldType.None) {
-                    fields[this.Row][this.Col].fieldType = FieldType.BlockNormal;
-                    fields[this.Row + 1][this.Col].fieldType = FieldType.BlockWithPacmanDown;
-                    this.Row++;
-                }
-                break;
-        }
-        return n;
-    }*/
     moveCol(fields, pacman) {
         let alreadyMoved = false;
         if (this.Col - pacman.Col < 0) {

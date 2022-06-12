@@ -114,8 +114,7 @@ function drawPlayground(context:CanvasRenderingContext2D,fields:Field[][], playC
     }
 }
 
-
-function init(mode: string){
+function init(){
     const canvas: any = document.getElementById("playground");
     const context: CanvasRenderingContext2D = canvas.getContext("2d");
     let fields:Field[][] = generatePlayground();
@@ -168,26 +167,6 @@ function init(mode: string){
             sendScoreToServer(count);
         }
         else{
-            /*if(mode === "double"){
-                context.clearRect(0,500,500,50)
-                count += pacman.move(fields,event,context);
-                ghost.moveTwoPlayers(fields,pacman);
-                context.fillStyle = "white";
-                context.fillText(`Count: ${count}`,0, 525);
-                playCount++;
-                drawPlayground(context,fields,playCount,count);
-                drawagain = true;
-            }
-            else {
-                context.clearRect(0,500,500,50)
-                count += pacman.move(fields,event,context);
-                ghost.moveGhost(fields,pacman);
-                context.fillStyle = "white";
-                context.fillText(`Count: ${count}`,0, 525);
-                playCount++;
-                drawPlayground(context,fields,playCount,count);
-                drawagain = true;
-            }*/
             context.clearRect(0,500,500,50)
             count += pacman.move(fields,event,context);
             ghost.moveGhost(fields,pacman);
@@ -200,4 +179,8 @@ function init(mode: string){
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    init();
+});
 
