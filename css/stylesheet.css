@@ -311,3 +311,28 @@ header {
 #gameModes:focus {
     outline: none;
 }
+
+/* Game - Online Multiplayer */
+#gameModes-OnlineMultiplayer {
+    color: #DDDDDD;
+    background-color: #1C1C1C;
+    border: none;
+    transform: translateY(70px);
+    margin-left: 50vw;
+    margin-bottom: 50px;
+}
+
+.grid-item1-onlineMultiplayer { grid-area: text; }
+.grid-item2-onlineMultiplayer { grid-area: canvas; }
+
+.grid-container-onlineMultiplayer {
+    margin-top: 100px;
+    margin-left: 35%;
+    display: grid;
+    grid-template-areas:
+            'text'
+            'canvas';
+}
+.grid-container-onlineMultiplayer > div{
+    margin-bottom: 10px;
+}

@@ -337,7 +337,7 @@ td.changeFR {
 
 .grid-container-onlineMultiplayer {
     margin-top: 100px;
-    margin-left: 30%;
+    margin-left: 35%;
     display: grid;
     grid-template-areas:
             'text'

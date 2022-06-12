@@ -3,11 +3,11 @@ let socket = io("https://pacman.the-changer.net", {
 });
 
 socket.on("youAreGhost", function() {
-    console.log("test");
+    openPopUp("<h2>You're the Ghost!</h2><button onClick='popUpButtonClicked()'>OK</button>");
     isGhost = true;
 })
 socket.on("youArePacman", function() {
-    console.log("test2");
+    openPopUp("<h2>You're Pac-Man!</h2><button onClick='popUpButtonClicked()'>OK</button>");
     isPacMan = true;
 })
 
@@ -33,15 +33,38 @@ function pacManWinner() {
     socket.emit("entity:ghost:dead");
 }
 
+let popUp = document.getElementById("popUp");
 socket.on("game:end", function(data) {
     let winner = data["winner"];
 
-    let popUp = document.getElementById("popUp");
     let html = "";
     if (winner === "Ghost") {
-        html = "<h2>Username too long!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
+        html = "<h2>Winner is Ghost!</h2> <button onclick='popUpButtonClicked(true)'>OK</button>";
+    } else if (winner === "Pacman") {
+        html = "<h2>Winner is Pac-Man!</h2> <button onclick='popUpButtonClicked(true)'>OK</button>";
     }
-    popUp.style.display = "block";
-    popUp.innerHTML += html;
+    openPopUp(html);
 })
 
+function popUpButtonClicked(redirect = false) {
+    setTimeout(() => {
+        popUp.innerHTML = "";
+        popUp.style.display = "none";
+        bgDarkener.style.display = "none";
+    }, 500)
+
+    popUp.style.transform = "translateX(-50%) translateY(-100%)"
+    if (redirect)
+        window.location.href = "pacman-game.html";
+}
+
+function openPopUp(text) {
+    bgDarkener.style.display = "block";
+
+    popUp.style.display = "block";
+    popUp.innerHTML = text;
+
+    setTimeout(() => {
+        popUp.style.transform = "translateX(-50%)"
+    }, 5)
+}
