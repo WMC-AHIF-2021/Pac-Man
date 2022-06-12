@@ -1,3 +1,4 @@
+
 if(localStorage.isDarkmode == null) {
     switchToDarkmode();
 }
@@ -13,7 +14,6 @@ function switchToDarkmode() {
     element.href = "css/stylesheet-dark.css";
     let modeImg = document.getElementById("mode");
     modeImg.src = "imgs/Dark-LightMode/darkmode.png";
-
     try {
         let imgHeaderHistory = document.getElementById("headerImgHistory");
         imgHeaderHistory.src = "imgs/Header/Dark_PacmanHeaderHistory.jpg";
@@ -46,7 +46,6 @@ function switchToLightmode() {
     element.href = "css/stylesheet.css";
     let modeImg = document.getElementById("mode");
     modeImg.src = "imgs/Dark-LightMode/lightmode.png";
-
     try {
         let imgHeaderHistory = document.getElementById("headerImgHistory");
         imgHeaderHistory.src = "imgs/Header/PacmanHeaderHistory.jpg";
