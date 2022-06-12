@@ -315,8 +315,6 @@ header {
 .popUp-Message {
     display: none;
     position: fixed;
-    transform: translateX(-50%) translateY(-100%);
-    transition: all 0.4s ease-in-out;
 
     font-family: Arial, Helvetica, sans-serif;
     background-color: gray;
