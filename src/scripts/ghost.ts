@@ -10,7 +10,7 @@ export class Ghost{
         this.Col = col;
         this.PrevField = prevField;
     }
-    
+
     private  moveCol(fields:Field[][], pacman:Pacman):boolean{
         let alreadyMoved:boolean = false;
         if (this.Col - pacman.Col < 0){

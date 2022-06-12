@@ -39,7 +39,7 @@
 			<div class="container-md">
 				<div class="row">
 					<div class="col-sm d-flex justify-content-center">
-						<canvas id="playground" width="425" height="680" oncontextmenu="return false;"></canvas>
+						<canvas id="playground" width="425" height="550" oncontextmenu="return false;"></canvas>
 						<table id="scoresList" style="margin-left: 40px">
 							<tr>
 								<th>Rank</th>
@@ -51,16 +51,13 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-3"></div>
-					<div class="col-sm d-flex justify-content-center" id="gameState"></div>
-					<div class="col-sm-3"></div>
+					<div class="col-sm d-flex justify-content-center">
+						<div id="count"></div>
+					</div>
+
 				</div>
 			</div>
 		</article>
-		<!-- <article>
-			<button onclick={init("single")}>Singel Player</button>
-			<button onclick={init("double")}>Two Players</button>
-		</article> -->
 
 		<article class="footer">
 			<p class="footerP">
