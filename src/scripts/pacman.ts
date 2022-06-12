@@ -105,7 +105,7 @@ export class Pacman extends Field{
 }
 function drawPlayground(context:CanvasRenderingContext2D,fields:Field[][], playCount:number, count:number){
     context.fillStyle = "white";
-    context.fillText(`Count: ${count}`,0,100);
+    context.fillText(`Score: ${count}`,0,100);
     for (let i = 0; i < fields.length; i++){
         let row = fields[i];
         for(let j = 0; j < row.length; j++){
@@ -116,7 +116,7 @@ function drawPlayground(context:CanvasRenderingContext2D,fields:Field[][], playC
 
 
 function init(){
-    const canvas: any = document.getElementById("playground");
+    const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("playground");
     const context: CanvasRenderingContext2D = canvas.getContext("2d");
     let fields:Field[][] = generatePlayground();
     let pacman = new Pacman(FieldType.BlockWithPacman,14,8);
@@ -132,8 +132,7 @@ function init(){
     image2.src = "imgs/Blinky.png";
     context.font = "16px Arial";
     context.fillStyle = "white";
-    context.fillText(`Count: ${count}`,0, 525);
-    context.fillText("Run away and collect as many points as you can!!!",0,550);
+    context.fillText(`Score: ${count}`,0, 525);
 
     document.addEventListener("keyup", event =>{
         if (isPopUpOpen) return;
@@ -172,8 +171,7 @@ function init(){
             count += pacman.move(fields,event,context);
             ghost.moveGhost(fields,pacman);
             context.fillStyle = "white";
-            context.fillText(`Count: ${count}`,0, 525);
-            context.fillText("Run away and collect as many points as you can!!!",0,550);
+            context.fillText(`Score: ${count}`,0, 525);
             playCount++;
             drawPlayground(context,fields,playCount,count);
             drawagain = true;

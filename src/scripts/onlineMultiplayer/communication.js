@@ -35,6 +35,13 @@ function pacManWinner() {
 
 socket.on("game:end", function(data) {
     let winner = data["winner"];
-    alert("winner is " + winner);
+
+    let popUp = document.getElementById("popUp");
+    let html = "";
+    if (winner === "Ghost") {
+        html = "<h2>Username too long!</h2> <button onclick='popUpButtonClicked()'>OK</button>";
+    }
+    popUp.style.display = "block";
+    popUp.innerHTML += html;
 })
 

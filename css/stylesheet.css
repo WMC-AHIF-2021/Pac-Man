@@ -21,8 +21,14 @@
     border-top: none;
 }
 
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
 
-article{
+article {
     margin: 2em 10%;
     text-align: justify;
 }
@@ -114,7 +120,7 @@ header {
 
 /* Change of Appearance */
 .grid-container-COA-MissPacMan {
-    display: flex;
+    display: grid;
     gap: 20px;
 }
 .gridCOA-MissPacMan-item1-img {
@@ -201,6 +207,23 @@ header {
 }
 
 /* Game */
+.grid-item2-gamePage { grid-area: gamePage-text; }
+.grid-item3-gamePage { grid-area: canvasSinglePlayer; }
+.grid-item4-gamePage { grid-area: scores; }
+
+.grid-container-GamePage {
+    margin-top: 100px;
+    margin-left: 30%;
+    display: grid;
+    grid-template-areas:
+            'usernameInput scores'
+            'gamePage-text scores'
+            'canvasSinglePlayer scores';
+}
+.grid-container-GamePage > div{
+    margin-bottom: 10px;
+}
+
 #scoresList {
     all: initial;
     border-spacing: 25px;
@@ -223,7 +246,7 @@ header {
     border-bottom: 2px solid #81BEF7;
 }
 
-#popUp-Username {
+#popUp {
     display: none;
     position: fixed;
     transform: translateX(-50%) translateY(-100%);
@@ -241,13 +264,13 @@ header {
     z-index: 3;
     left: 50%;
 }
-#popUp-Username h2 {
+#popUp h2 {
     margin-top: 20px;
     font-size: x-large;
     color: white;
     border-bottom: 2px solid #6E6E6E;
 }
-#popUp-Username button {
+#popUp button {
     margin-top: 20px;
     background-color: gray;
     opacity: 0.9;
@@ -261,10 +284,10 @@ header {
     border: 2px solid #6E6E6E;
     color: white;
 }
-#popUp-Username button:focus {
+#popUp button:focus {
     outline: none;
 }
-#popUp-Username button:hover {
+#popUp button:hover {
     transform: scale(1.05);
     transition: ease-in-out 50ms;
 }
@@ -276,4 +299,15 @@ header {
 
     z-index: 2;
     padding: 100vw 100vh;
+}
+
+#gameModes {
+    background-color: white;
+    border: none;
+    transform: translateY(70px);
+    margin-left: 50vw;
+    margin-bottom: 50px;
+}
+#gameModes:focus {
+    outline: none;
 }

@@ -5,8 +5,8 @@ enum FieldType {
     ghostField
 }
 
-let playground = (<HTMLCanvasElement>document.getElementById("playground"));
-let ctx = playground.getContext("2d")
+let playground = (<HTMLCanvasElement>document.getElementById("playground-onlineMultiplayer"));
+let ctx = playground.getContext("2d");
 
 let pacMan: PacMan;
 let ghost: Ghost;
@@ -403,6 +403,12 @@ function setGhostPos(x: number, y: number) {
     ghost.x = x;
     ghost.y = y;
 }
+
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 window.addEventListener("load", function () {
     init();

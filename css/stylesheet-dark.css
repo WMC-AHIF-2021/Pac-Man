@@ -32,6 +32,13 @@ header {
     z-index: 1;
 }
 
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
 .footer{
     margin: 0;
     text-align: center;
@@ -117,7 +124,7 @@ td.changeFR {
 
 /* Change of Appearance */
 .grid-container-COA-MissPacMan {
-    display: flex;
+    display: grid;
     gap: 20px;
 }
 .gridCOA-MissPacMan-item1-img {
@@ -203,22 +210,31 @@ td.changeFR {
     transform: translateY(3px);
 }
 
-/* Game */
-#descriptionSinglePlayer {
-    margin-top: 10px;
-    margin-left: 31%;
-    margin-bottom: 50px;
-    color: #DDDDDD;
+/* Game - Singleplayer */
+.grid-item1-gamePage { grid-area: usernameInput; }
+.grid-item2-gamePage { grid-area: gamePage-text; }
+.grid-item3-gamePage { grid-area: canvasSinglePlayer; }
+.grid-item4-gamePage { grid-area: scores; }
+
+.grid-container-GamePage {
+    margin-top: 100px;
+    margin-left: 30%;
+    display: grid;
+    grid-template-areas:
+            'usernameInput scores'
+            'gamePage-text scores'
+            'canvasSinglePlayer scores';
+}
+.grid-container-GamePage > div{
+    margin-bottom: 10px;
 }
 
 #scoresList {
     all: initial;
     color: #DDDDDD;
-    border-spacing: 25px;
+    border-spacing: 25px !important;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-
-    transform: translateY(-4%);
 }
 #scoresList th {
     color: #2ECCFA;
@@ -239,7 +255,7 @@ td.changeFR {
     border-bottom: 1px solid #2ECCFA;
 }
 
-#popUp-Username {
+#popUp {
     display: none;
     position: fixed;
     transform: translateX(-50%) translateY(-100%);
@@ -257,13 +273,13 @@ td.changeFR {
     z-index: 3;
     left: 50%;
 }
-#popUp-Username h2 {
+#popUp h2 {
     margin-top: 20px;
     font-size: x-large;
     color: white;
     border-bottom: 2px solid #585858;
 }
-#popUp-Username button {
+#popUp button {
     margin-top: 20px;
     background-color: #424242;
     opacity: 0.9;
@@ -277,10 +293,10 @@ td.changeFR {
     border: 2px solid #585858;
     color: white;
 }
-#popUp-Username button:focus {
+#popUp button:focus {
     outline: none;
 }
-#popUp-Username button:hover {
+#popUp button:hover {
     transform: scale(1.05);
     transition: ease-in-out 50ms;
 }
@@ -304,4 +320,29 @@ td.changeFR {
 }
 #gameModes:focus {
     outline: none;
+}
+
+/* Game - online Multiplayer */
+#gameModes-OnlineMultiplayer {
+    color: #DDDDDD;
+    background-color: #1C1C1C;
+    border: none;
+    transform: translateY(70px);
+    margin-left: 50vw;
+    margin-bottom: 50px;
+}
+
+.grid-item1-onlineMultiplayer { grid-area: text; }
+.grid-item2-onlineMultiplayer { grid-area: canvas; }
+
+.grid-container-onlineMultiplayer {
+    margin-top: 100px;
+    margin-left: 30%;
+    display: grid;
+    grid-template-areas:
+            'text'
+            'canvas';
+}
+.grid-container-onlineMultiplayer > div{
+    margin-bottom: 10px;
 }

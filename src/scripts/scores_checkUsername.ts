@@ -34,12 +34,16 @@ function getScores() {
         .then(data => {
             data.sort((a, b) => b.score - a.score);
 
-            let html = "";
+            let html = "<tr>" +
+                "<th>Rank</th>" +
+                "<th>Name</th>" +
+                "<th>Score</th>" +
+                "</tr>";
             let i = 1;
             for (let currentData of data) {
                 if (i < 11) {
                     currentData.username = currentData.username.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                    html += "<tr><td>" + i + "</td><td>" + currentData.username + "</td><td>" + ' ' + currentData.score + "</tr></td>"
+                    html += "<tr><td>" + i + "</td><td>" + currentData.username + "</td><td>" + ' ' + currentData.score + "</td></tr>"
                 } else {
                     deleteScore(currentData)
                 }
@@ -62,7 +66,7 @@ function checkUsername(): boolean {
 
         bgDarkener.style.display = "block";
         setTimeout(() => {
-        popUp.style.transform = "translateX(-50%)"
+            popUp.style.transform = "translateX(-50%)"
         }, 5)
 
         isPopUpOpen = true;

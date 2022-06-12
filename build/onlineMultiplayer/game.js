@@ -5,7 +5,7 @@ var FieldType;
     FieldType[FieldType["groundPoint"] = 2] = "groundPoint";
     FieldType[FieldType["ghostField"] = 3] = "ghostField";
 })(FieldType || (FieldType = {}));
-let playground = document.getElementById("playground");
+let playground = document.getElementById("playground-onlineMultiplayer");
 let ctx = playground.getContext("2d");
 let pacMan;
 let ghost;
@@ -343,6 +343,11 @@ function setGhostPos(x, y) {
     ghost.x = x;
     ghost.y = y;
 }
+window.addEventListener("keydown", function (e) {
+    if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
 window.addEventListener("load", function () {
     init();
 });

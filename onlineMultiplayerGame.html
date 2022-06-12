@@ -1,0 +1,74 @@
+<html class="bg" lang="en">
+<head lang="en">
+    <title>Online Multiplayer - PacMan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
+    <link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+    <link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
+</head>
+<body>
+<div id="bgDarkener"></div>
+<header class="btn-group">
+    <button onclick="window.location.href = 'index.html';">INDEX</button>
+    <button onclick="window.location.href = 'rules.html';">RULES</button>
+    <button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
+    <button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
+    <button onclick="window.location.href = 'pacman-game.html';">GAME</button>
+</header>
+<br>
+<img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
+
+<label for="gameModes">
+    <select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
+        <option value="onlineMultiplayerGame.html">Online Multiplayer</option>
+        <option value="pacman-game.html">Single-Player</option>
+        <option value="multiplayer">Multiplayer</option>
+    </select>
+</label>
+
+<div class="grid-container-onlineMultiplayer">
+    <div class="grid-item1-onlineMultiplayer">
+        Control with arrow keys <br>
+        PacMan has to collect all points - Ghost has to eat PacMan
+    </div>
+
+    <div class="grid-item2-onlineMultiplayer">
+        <canvas id="playground-onlineMultiplayer" style="margin-bottom: 100px" width="525" height="600">
+            <div style="display: none">
+                <img id="imgPacManClose" src="imgs/Game/Pac-Man/Temp.png" alt="imgGame-close">
+                <img id="imgPacManRight" src="imgs/Game/Pac-Man/Right.png" alt="imgGame-open">
+
+                <img id="imgPacManLeft" src="imgs/Game/Pac-Man/Left.png" alt="imgGame-open">
+                <img id="imgPacManUp" src="imgs/Game/Pac-Man/Up.png" alt="imgGame-open">
+                <img id="imgPacManDown" src="imgs/Game/Pac-Man/Down.png" alt="imgGame-open">
+
+                <img id="imgGhost" src="imgs/Blinky.png" alt="imgGame-ghost">
+            </div>
+        </canvas>
+    </div>
+</div>
+
+<div id="popUp"></div>
+
+<article class="footer">
+    <p class="footerP">
+        <a href="https://www.htl-leonding.at/">
+            <img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+        </a>
+        <button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
+        <img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+    </p>
+    <br>
+</article>
+<div id="loadingScreen">
+    <img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+</div>
+<script src="https://pacman.the-changer.net/socket.io/socket.io.js"></script>
+
+<script src="src/scripts/loadingScreen.js"></script>
+<script src="src/scripts/darkmode.js"></script>
+<script src="build/onlineMultiplayer/game.js"></script>
+<script src="src/scripts/onlineMultiplayer/communication.js"></script>
+</body>
+</html>
