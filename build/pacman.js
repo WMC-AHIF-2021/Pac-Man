@@ -109,7 +109,7 @@ function drawPlayground(context, fields, playCount, count) {
         }
     }
 }
-function init() {
+function init(mode) {
     const canvas = document.getElementById("playground");
     const context = canvas.getContext("2d");
     let fields = generatePlayground();
@@ -160,6 +160,26 @@ function init() {
             sendScoreToServer(count);
         }
         else {
+            /*if(mode === "double"){
+                context.clearRect(0,500,500,50)
+                count += pacman.move(fields,event,context);
+                ghost.moveTwoPlayers(fields,pacman);
+                context.fillStyle = "white";
+                context.fillText(`Count: ${count}`,0, 525);
+                playCount++;
+                drawPlayground(context,fields,playCount,count);
+                drawagain = true;
+            }
+            else {
+                context.clearRect(0,500,500,50)
+                count += pacman.move(fields,event,context);
+                ghost.moveGhost(fields,pacman);
+                context.fillStyle = "white";
+                context.fillText(`Count: ${count}`,0, 525);
+                playCount++;
+                drawPlayground(context,fields,playCount,count);
+                drawagain = true;
+            }*/
             context.clearRect(0, 500, 500, 50);
             count += pacman.move(fields, event, context);
             ghost.moveGhost(fields, pacman);
@@ -172,7 +192,4 @@ function init() {
         }
     });
 }
-document.addEventListener('DOMContentLoaded', (event) => {
-    init();
-});
 //# sourceMappingURL=pacman.js.map
