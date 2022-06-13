@@ -1,9 +1,13 @@
+#message{
+    display: none;
+}
+
 @media (max-width: 500px){
-    .mobileBlocker {
+    #mobileBlocker {
         display: none;
     }
 
-    .message {
+    #message {
         display: block;
     }
 }

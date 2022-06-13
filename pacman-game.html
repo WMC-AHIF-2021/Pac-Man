@@ -19,8 +19,7 @@
 </header>
 <br>
 <img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
-<div class="mobileBlocker">
-
+<div id="mobileBlocker">
 	<label for="gameModes">
 		<select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
 			<option selected="true" value="pacman-game.html">Single-Player</option>
@@ -69,6 +68,6 @@
 	<script src="src/scripts/darkmode.js"></script>
 	<script src="build/scores_checkUsername.js"></script>
 </div>
-<p class="message">Please use this on desktop!</p>
+<p id="message">Please use this on desktop!</p>
 </body>
 </html>
