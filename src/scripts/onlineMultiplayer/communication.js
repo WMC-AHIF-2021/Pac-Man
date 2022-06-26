@@ -10,7 +10,7 @@ socket.on("youAreGhost", function() {
     isGhost = true;
 })
 socket.on("youArePacman", function() {
-    characterText.innerHTML = "<h2 style='margin-top: 20px; margin-bottom: 10px'>Your're Pac-Man!</h2> You have to collect all points";
+    characterText.innerHTML = "<h2 style='margin-top: 20px; margin-bottom: 10px'>Your're Pac-Man!</h2> You have to eat Pac-Man";
 
     openPopUp("<h2 style='margin-top: 20px; margin-bottom: 10px'>The game starts!</h2><button onClick='popUpButtonClicked()'>OK</button>");
     isPacMan = true;
