@@ -59,7 +59,7 @@ function init() {
             pacMan.move(renderer.width, renderer.height, field);
             pacMan.win();
         }
-        if (isGhost) {
+        else if (isGhost) {
             ghost.move(renderer.width, renderer.height, field);
             ghost.win(pacMan.x, pacMan.y);
 
