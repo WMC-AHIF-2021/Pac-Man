@@ -4,13 +4,13 @@ let socket = io("https://pacman.the-changer.net", {
 
 let characterText = document.getElementById("characterText");
 socket.on("youAreGhost", function() {
-    characterText.innerHTML = "<h2 style='margin-top: 20px; margin-bottom: 10px'>Your're the Ghost!</h2>Control with arrow-keys - you have to collect all points";
+    characterText.innerHTML = "<h2 style='margin-top: 20px; margin-bottom: 10px'>Your're the Ghost!</h2>Control with arrow-keys - you have to eat Pac-Man";
 
     openPopUp("<h2>The game starts!</h2><button onClick='popUpButtonClicked()'>OK</button>");
     isGhost = true;
 })
 socket.on("youArePacman", function() {
-    characterText.innerHTML = "<h2 style='margin-top: 20px; margin-bottom: 10px'>Your're Pac-Man!</h2>Control with arrow-keys - you have to eat Pac-Man";
+    characterText.innerHTML = "<h2 style='margin-top: 20px; margin-bottom: 10px'>Your're Pac-Man!</h2>Control with arrow-keys - you have to collect all points";
 
     openPopUp("<h2 style='margin-top: 20px; margin-bottom: 10px'>The game starts!</h2><button onClick='popUpButtonClicked()'>OK</button>");
     isPacMan = true;
