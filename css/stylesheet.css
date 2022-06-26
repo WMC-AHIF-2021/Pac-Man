@@ -1,3 +1,17 @@
+#message{
+    display: none;
+}
+
+@media (max-width: 500px){
+    #mobileBlocker {
+        display: none;
+    }
+
+    #message {
+        display: block;
+    }
+}
+
 .btn-group button {
     font-size: large;
     height: 45px;

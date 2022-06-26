@@ -19,55 +19,55 @@
 </header>
 <br>
 <img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
-
-<label for="gameModes">
-	<select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
-		<option selected="true" value="pacman-game.html">Single-Player</option>
-		<option value="multiplayer.html">Multiplayer</option>
-		<option value="onlineMultiplayerGame.html">Online Multiplayer</option>
-	</select>
-</label>
-<br>
-
-<div class="grid-container-GamePage">
-	<div class="grid-item1-gamePage">
-		<label>
-			<input id="usernameInput" type="text" placeholder="Enter username">
-		</label>
-	</div>
-	<div class="grid-item2-gamePage">
-		Run away and collect as many points as you can!
-	</div>
-	<div class="grid-item3-gamePage">
-		<canvas id="playground" style="margin-top: 50px;" width="425" height="680" oncontextmenu="return false;"></canvas>
-	</div>
-	<div class="grid-item4-gamePage">
-		<table id="scoresList">
-
-		</table>
-	</div>
-	<div class="grid-item5-gamePage">
-		<div id="count"></div>
-	</div>
-</div>
-
-<div id="popUp"></div>
-<article class="footer">
-	<p class="footerP">
-		<br>
-		<a href="https://www.htl-leonding.at/">
-			<img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
-		</a>
-		<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
-		<img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
-	</p>
+<div id="mobileBlocker">
+	<label for="gameModes">
+		<select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
+			<option selected="true" value="pacman-game.html">Single-Player</option>
+			<option value="multiplayer.html">Multiplayer</option>
+			<option value="onlineMultiplayerGame.html">Online Multiplayer</option>
+		</select>
+	</label>
 	<br>
-</article>
-<div id="loadingScreen">
-	<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+
+	<div class="grid-container-GamePage">
+		<div class="grid-item1-gamePage">
+			<label>
+				<input id="usernameInput" type="text" placeholder="Enter username">
+			</label>
+		</div>
+		<div class="grid-item2-gamePage">
+			Run away and collect as many points as you can!
+			<div id="count"></div>
+		</div>
+		<div class="grid-item3-gamePage">
+			<canvas id="playground" width="425" height="550" oncontextmenu="return false;"></canvas>
+		</div>
+		<div class="grid-item4-gamePage">
+			<table id="scoresList">
+
+			</table>
+		</div>
+	</div>
+
+	<div id="popUp"></div>
+	<article class="footer">
+		<p class="footerP">
+			<br>
+			<a href="https://www.htl-leonding.at/">
+				<img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+			</a>
+			<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
+			<img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+		</p>
+		<br>
+	</article>
+	<div id="loadingScreen">
+		<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+	</div>
+	<script src="src/scripts/loadingScreen.js"></script>
+	<script src="src/scripts/darkmode.js"></script>
+	<script src="build/scores_checkUsername.js"></script>
 </div>
-<script src="src/scripts/loadingScreen.js"></script>
-<script src="src/scripts/darkmode.js"></script>
-<script src="build/scores_checkUsername.js"></script>
+<p id="message">Please use this on desktop!</p>
 </body>
 </html>
