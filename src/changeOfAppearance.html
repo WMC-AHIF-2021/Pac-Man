@@ -4,8 +4,8 @@
 		<title>Change of Appearance - PacMan</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
-		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
-		<link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
+		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+		<link href="../img/favicon.ico" rel="shortcut icon">
 	</head>
 	<body>
 		<header class="btn-group">
@@ -16,7 +16,7 @@
 			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
 		<br>
-		<img class="header" id="headerImgCoa" src="imgs/Header/PacmanHeaderCOA.jpg" alt="Header">
+		<img class="header" id="headerImgCoa" src="../img/headers/PacmanHeaderCOA.jpg" alt="Header">
 		<article>
 			<h2>Then vs Now</h2>
 			<p>
@@ -28,8 +28,8 @@
 				old Version and one from the new Version. Also there are a lot more than two Versions existing for example the 
 				Championship edition or the “Ms. Pacman” edition.
 			</p>
-			<img src="./imgs/pacman-level-orginal.png" alt="old version" style="width: 400px; border: 2px solid white">
-			<img src="./imgs/pacman-level.png" alt="new version" style="height: 225px; margin-left: 20px; border: 2px solid white">
+			<img src="../img/pacman-level-orginal.png" alt="old version" style="width: 400px; border: 2px solid white">
+			<img src="../img/pacman-level.png" alt="new version" style="height: 225px; margin-left: 20px; border: 2px solid white">
 
 			<h2>Championship Edition</h2>
 			<p>
@@ -41,12 +41,12 @@
 				score until it is too fats and you die.
 				Now you can’t play this version anymore, you only can play the original or the “Ms. Pacman”.
 			</p>
-			<img src="imgs/pacman-level-new.jpg" alt="ChampionshipVersion" style="width: 400px;  border: 2px solid white">
+			<img src="../img/pacman-level-new.jpg" alt="ChampionshipVersion" style="width: 400px;  border: 2px solid white">
 
 			<h2>"Ms. Pacman" Edition</h2>
 			<div class="grid-container-COA-MissPacMan">
 				<div class="gridCOA-MissPacMan-item1-img">
-					<img class="changeOA" src="imgs/pacman-level-mspacman.png" alt="MsPacman" style="width: 150px;  border: 2px solid white">
+					<img class="changeOA" src="../img/pacman-level-mspacman.png" alt="MsPacman" style="width: 150px;  border: 2px solid white">
 				</div>
 				<div class="gridCOA-MissPacMan-item2-text">
 					Here is a comparison between the two most popular versions. The original Pacman version and the Ms. Pacman version.
@@ -63,18 +63,18 @@
 		<article class="footer">
 			<p class="footerP">
 				<a href="https://www.htl-leonding.at/">
-					<img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+					<img id="htlLeonding" src="../img/htlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
 				</a>
 				<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
-				<img class="mode" src="imgs/Dark-LightMode/lightmode.png" alt="Mode" onclick="switchToDarkmode();" id="mode">
+				<img class="theme" src="../img/themeButtons/button-dark.png" alt="Mode" onclick="switchToDarkmode();" id="mode">
 				<br>
 			</p>
 			<br>
 		</article>
 		<div id="loadingScreen">
-			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+			<img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
 		</div>
-		<script src="src/scripts/loadingScreen.js"></script>
-		<script src="src/scripts/darkmode.js"></script>
+		<script src="scripts/loadingScreen.js"></script>
+		<script src="scripts/theme.js"></script>
 	</body>
 </html>

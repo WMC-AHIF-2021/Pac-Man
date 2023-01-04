@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PacMan</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css" id="styles">
+    <link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+
+    <link href="../img/favicon.ico" rel="icon">
+</head>
+<body>
+<header class="navbar">
+    <button onclick="window.location.href = 'index.html';">INDEX</button>
+    <button onclick="window.location.href = 'rules.html';">RULES</button>
+    <button onclick="window.location.href = 'history.html';">HISTORY</button>
+    <button onclick="window.location.href = 'changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
+    <button onclick="window.location.href = 'game-singlePlayer.html';">GAME</button>
+</header>
+
+<br>
+<img class="header" id="headerImgIndex" src="../img/headers/index/headerIndex-light.png" alt="Header-Image">
+
+<img id="animationIndex" src="../img/PacMan.png" alt="PacMan for animation">
+<img id="animationIndexGhost" src="../img/InkyMirrored.png" alt="Ghost for animation">
+
+<div id="loadingScreen">
+    <img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
+</div>
+
+<article class="footer" style="position: absolute; bottom: 0; width: 100vw">
+    <p class="footerP">
+        <a href="https://www.htl-leonding.at/">
+            <img id="htlLeonding" src="../img/htlLogo/htlLogo.png" alt="Htl Logo">
+        </a>
+        <button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
+        <img src="../img/themeButtons/button-light.png" onclick="enableLightMode();" id="theme" alt="Light/Darkmode-Image">
+        <br>
+    </p>
+    <br>
+</article>
+
+<script src="scripts/loadingScreen.js"></script>
+<script src="scripts/animationIndexPacMan.js"></script>
+<script src="scripts/theme.js"></script>
+</body>
+</html>

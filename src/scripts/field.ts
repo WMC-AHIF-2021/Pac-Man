@@ -20,7 +20,7 @@ export class Field {
     }
     public drawField(ctx:CanvasRenderingContext2D, x:number, y:number,playCount:number){
         let image = new Image(10,10);
-        image.src = "imgs/Blinky.png";
+        image.src = "img/Blinky.png";
         ctx.beginPath();
         let color = "black";
         if(this.fieldType == FieldType.Wall){

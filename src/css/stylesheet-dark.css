@@ -1,3 +1,4 @@
+/* Allgemeines */
 #message{
     display: none;
 }
@@ -12,27 +13,37 @@
     }
 }
 
-.btn-group button {
+.navbar button {
     font-size: large;
     height: 45px;
     width: 20%;
     cursor: pointer;
     float: left;
-    background-color: #D8D8D8;
-    color: black;
+    background-color: black;
+    color: #2ECCFA;
     border-top: none;
     border-right: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #2ECCFA;
     border-left: none;
 
-    box-shadow: 10px 0 3px 4px #848484;
+    box-shadow: 10px 0 3px 4px #424242;
 }
-.btn-group button:hover {
-    border-bottom: 5px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    box-shadow: 10px 0 3px  #848484;
+.navbar button:hover {
+    border-bottom: 5px solid #2ECCFA;
+    color: #2ECCFA;
+    border-right: 1px solid #2ECCFA;
+    border-left: 1px solid #2ECCFA;
     border-top: none;
+}
+img.header{
+    width: 100%;
+    border-bottom: 2px solid #2ECCFA;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 button, input, optgroup, select, textarea {
@@ -42,7 +53,20 @@ button, input, optgroup, select, textarea {
     line-height: inherit;
 }
 
-article {
+.footer{
+    margin: 0;
+    text-align: center;
+    border-top: 2px solid #2ECCFA;
+    background-color: black;
+
+    box-shadow: 10px 0 3px 4px #424242;
+}
+.footerP{
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+article{
     margin: 2em 10%;
     text-align: justify;
 }
@@ -50,17 +74,19 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 150%;
+    color: #DDDDDD;
+    background-color: #1C1C1C;
 }
-
 body.scroll{
     overflow: hidden;
 }
 
 h2{
-    color: #81BEF7;
+    color: #2ECCFA;
     margin-top: 3em;
 }
 
+/* History */
 img.level1{
     float:right;
     margin-right: 10%;
@@ -72,20 +98,17 @@ img.level2{
     margin-right: 20px;
 }
 
-img.header{
-    width: 100%;
-    border-bottom: 2px solid black;
-}
+/* Rules */
 img.level {
     width: 10em;
     margin-right: 20px;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 img.ghosts {
     width: 5em;
     margin-right: 1em;
 }
-img.mode {
+#theme {
     margin-right: 2em;
     width: 2em;
     float: right;
@@ -107,29 +130,10 @@ td.changeFR {
     width: 70%;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-.footer {
-    margin: 0;
-    text-align: center;
-    border-top: 2px solid black;
-    background-color: #D8D8D8;
-
-    box-shadow: 10px 10px 3px 12px #848484;
-}
-.footerP {
-    margin-right: 2em;
-    margin-left: 2em;
-}
 
 .rules {
     border-radius: 1em;
-    border: 2px solid black;
-    background-color: #D8D8D8
+    border: 2px solid #2ECCFA;
 }
 
 /* Change of Appearance */
@@ -154,6 +158,7 @@ header {
     transform: translateY(35px);
 }
 
+/* Animation Index */
 #animationIndex {
     bottom: 150px;
     position: fixed;
@@ -183,30 +188,29 @@ header {
     }
 }
 
+/* Leonding Logo Footer */
 #htlLeonding {
     width: 150px;
     transform: translate(55px);
 
 }
 
-/* About Us */
+/* About Us Fooer + Page */
 #aboutUs {
     position: absolute;
     margin-top: 25px;
     transform: translate(-55px);
-    border: none;
-    background-color: #D8D8D8;
-    color: black;
+    background-color: black;
+    color: #A4A4A4;
     font-size: small;
     cursor: pointer;
 }
 
 .aboutUs-HeaderLine {
     font-size: x-large;
-    color: #81BEF7;
+    color: #2ECCFA;
     font-weight: bold;
 }
-
 #aboutUS-Pinky {
     width: 25px;
     transform: translateY(3px);
@@ -220,10 +224,12 @@ header {
     transform: translateY(3px);
 }
 
-/* Game */
+/* Game - Singleplayer */
+.grid-item1-gamePage { grid-area: usernameInput; }
 .grid-item2-gamePage { grid-area: gamePage-text; }
 .grid-item3-gamePage { grid-area: canvasSinglePlayer; }
 .grid-item4-gamePage { grid-area: scores; }
+.grid-item5-gamePage { grid-area: score; }
 
 .grid-container-GamePage {
     margin-top: 100px;
@@ -232,7 +238,8 @@ header {
     grid-template-areas:
             'usernameInput scores'
             'gamePage-text scores'
-            'canvasSinglePlayer scores';
+            'canvasSinglePlayer scores'
+            'score scores';
 }
 .grid-container-GamePage > div{
     margin-bottom: 10px;
@@ -240,24 +247,28 @@ header {
 
 #scoresList {
     all: initial;
-    border-spacing: 25px;
+    color: #DDDDDD;
+    border-spacing: 25px !important;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-
-    transform: translateY(-4%);
 }
 #scoresList th {
-    color:  #81BEF7;
+    color: #2ECCFA;
 }
 
 #usernameInput {
+    background-color: #1C1C1C;
+    color: white;
+
     border: none;
-    border-bottom: 2px solid #81BEF7;
+    border-bottom: 1px solid #2ECCFA;
 }
 #usernameInput:focus {
+    color: white;
+
     outline:none;
     border: none;
-    border-bottom: 2px solid #81BEF7;
+    border-bottom: 1px solid #2ECCFA;
 }
 
 #popUp {
@@ -267,7 +278,7 @@ header {
     transition: all 0.4s ease-in-out;
 
     font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
+    background-color: #424242;
     opacity: 0.9;
     border-radius: 2px;
 
@@ -282,12 +293,12 @@ header {
     margin-top: 20px;
     font-size: x-large;
     color: white;
-    border-bottom: 2px solid #6E6E6E;
+    border-bottom: 2px solid #585858;
     font-weight: normal;
 }
 #popUp button {
     margin-top: 20px;
-    background-color: gray;
+    background-color: #424242;
     opacity: 0.9;
 
     box-shadow: 0 5px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -296,7 +307,7 @@ header {
     float: right;
 
     border-radius: 3px;
-    border: 2px solid #6E6E6E;
+    border: 2px solid #585858;
     color: white;
 }
 #popUp button:focus {
@@ -310,14 +321,15 @@ header {
     display: none;
     position: fixed;
     background-color: black;
-    opacity: 0.2;
+    opacity: 0.3;
 
     z-index: 2;
     padding: 100vw 100vh;
 }
 
 #gameModes {
-    background-color: white;
+    color: #DDDDDD;
+    background-color: #1C1C1C;
     border: none;
     transform: translateY(70px);
     margin-left: 50vw;
@@ -327,7 +339,7 @@ header {
     outline: none;
 }
 
-/* Game - Online Multiplayer */
+/* Game - online Multiplayer */
 #gameModes-OnlineMultiplayer {
     color: #DDDDDD;
     background-color: #1C1C1C;
@@ -348,18 +360,17 @@ header {
             'text'
             'canvas';
 }
-.grid-container-onlineMultiplayer > div{
+.grid-container-onlineMultiplayer > div {
     margin-bottom: 10px;
 }
 
+/* local multiplayer */
 .popUp-Message {
     display: none;
     position: fixed;
-    transform: translateX(-50%) translateY(-100%);
-    transition: all 0.4s ease-in-out;
-
+    
     font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
+    background-color: #424242;
     opacity: 0.9;
     border-radius: 2px;
 
@@ -374,11 +385,11 @@ header {
     margin-top: 20px;
     font-size: x-large;
     color: white;
-    border-bottom: 2px solid #6E6E6E;
+    border-bottom: 2px solid #585858;
 }
 .popUp-Message button {
     margin-top: 20px;
-    background-color: gray;
+    background-color: #424242;
     opacity: 0.9;
 
     box-shadow: 0 5px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -387,7 +398,7 @@ header {
     float: right;
 
     border-radius: 3px;
-    border: 2px solid #6E6E6E;
+    border: 2px solid #585858;
     color: white;
 }
 .popUp-Message button:focus {

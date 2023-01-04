@@ -4,8 +4,8 @@
 		<title>Rules - PacMan</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles" />
-		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
-		<link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
+		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+		<link href="../img/favicon.ico" rel="icon">
 	</head>
 	<body>
 		<header class="btn-group">
@@ -15,7 +15,7 @@
 			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
 			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
-		<img class="header" id="headerImgRules" src="imgs/Header/PacmanHeaderRules.jpg" alt="header-Image">
+		<img class="header" id="headerImgRules" src="../img/headers/PacmanHeaderRules.jpg" alt="header-Image">
 		<article>
 			<h2>Game target:</h2>
 			<p>
@@ -29,7 +29,7 @@
 			<p>
 				<table>
 					<tr>
-						<td><img src="imgs/pacman-level.png" alt="Levelaufbau" class="level"></td>
+						<td><img src="../img/pacman-level.png" alt="Levelaufbau" class="level"></td>
 						<td>
 							All Levels in Pac-Man are structured in the same way. You have to collect points to increase your score. 
 							If you eat the big dots the ghosts will turn blue for a certain period of time. During this time you 
@@ -44,7 +44,7 @@
 			<p>
 				<table>
 					<tr>
-						<td><img src="imgs/Blinky.png" alt="Blinky" class="ghosts"></td>
+						<td><img src="../img/Blinky.png" alt="Blinky" class="ghosts"></td>
 						<td>
 							Blinky the Red Ghost is the leader of the four ghosts. He ist known in Japan as Akabei. Blinky is the 
 							ghost that is the easiest to figure out. He ist he most aggressive ghost and his hunting process is 
@@ -54,7 +54,7 @@
 					</tr>
 					<tr><td><br></td></tr>
 					<tr>
-						<td><img src="imgs/Pinky.png" alt="Pinky" class="ghosts"></td>
+						<td><img src="../img/Pinky.png" alt="Pinky" class="ghosts"></td>
 						<td>
 							Pinky is the only female ghost in the group. She is programmed to find different ways to unexpectedly catch 
 							the player. So Blinky chases Pac-Man and Pinky cuts the way off. Pinky is the ghost that is the easiest to 
@@ -63,7 +63,7 @@
 					</tr>
 					<tr><td><br></td></tr>
 					<tr>
-						<td><img src="imgs/Inky.png" alt="Inky" class="ghosts"></td>
+						<td><img src="../img/Inky.png" alt="Inky" class="ghosts"></td>
 						<td>
 							The behaviour of the cyan ghost Inky is the most difficult to predict. Sometimes he behaves like Blinky, 
 							Pinky or Clyde. This is because Inky's target square is a combination of Pac-Man's position and Blinky's 
@@ -72,7 +72,7 @@
 					</tr>
 					<tr><td><br></td></tr>
 					<tr>
-						<td><img src="imgs/Clyde.png" alt="Clyde" class="ghosts"></td>
+						<td><img src="../img/Clyde.png" alt="Clyde" class="ghosts"></td>
 						<td>
 							The orange ghost is Clyde. He moves away from Pac-Man rather than towards him.
 						</td>
@@ -92,18 +92,18 @@
 		<article class="footer">
 			<p class="footerP">
 				<a href="https://www.htl-leonding.at/">
-					<img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+					<img id="htlLeonding" src="../img/htlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
 				</a>
 				<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
-				<img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+				<img class="theme" src="../img/themeButtons/button-dark.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
 				<br>
 			</p>
 			<br>
 		</article>
 		<div id="loadingScreen">
-			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+			<img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
 		</div>
-		<script src="src/scripts/loadingScreen.js"></script>
-		<script src="src/scripts/darkmode.js"></script>
+		<script src="scripts/loadingScreen.js"></script>
+		<script src="scripts/theme.js"></script>
     </body>
 </html>

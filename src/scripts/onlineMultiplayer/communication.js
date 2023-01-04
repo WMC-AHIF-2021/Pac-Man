@@ -67,7 +67,7 @@ function popUpButtonClicked(redirect = false) {
 
     popUp.style.transform = "translateX(-50%) translateY(-100%)"
     if (redirect)
-        window.location.href = "pacman-game.html";
+        window.location.href = "game-singlePlayer.html";
 }
 
 function openPopUp(text) {

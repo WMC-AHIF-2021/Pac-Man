@@ -11,8 +11,8 @@
 		<title>AboutUs - PacMan</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
-		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles"> 
-		<link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
+		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+		<link href="../img/favicon.ico" rel="shortcut icon">
 	</head>
 	<body>
 		<header class="btn-group">
@@ -23,12 +23,12 @@
 			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 		</header>
 		<br>
-		<img class="header" id="headerImgIndex" src="imgs/Header/HeaderTemp.png" alt="Header-Image">
+		<img class="header" id="headerImgIndex" src="../img/headers/index/headerIndex-light.png" alt="Header-Image">
 		<article>
 		<br>
 
 		<p class="aboutUs-HeaderLine">Sophie Böhm
-		<img id="aboutUS-Pinky" src="imgs/Pinky.png" alt="Pinky">
+		<img id="aboutUS-Pinky" src="../img/Pinky.png" alt="Pinky">
 		<p>
 			"Hi, my name is Sophie. I am a 16 year old girl from HTL-Leonding. In my free time i like to read
 			and i also like to cook and bake because it's very funny to try new recipies. If you have any questions about our project,
@@ -36,7 +36,7 @@
 		</p>
 
 		<p class="aboutUs-HeaderLine">Sophie Haider
-		<img id="aboutUs-Inky" src="imgs/Inky.png" alt="Inky">
+		<img id="aboutUs-Inky" src="../img/Inky.png" alt="Inky">
 		<p>
 			"Hi, my name is Sophie and I am the teamleader of our project. I live in Eidenberg, that's near Linz.
 			In my free time I like to do some creative stuff like drawing or reading. I also play the flute since 2016.
@@ -44,7 +44,7 @@
 		</p>
 
 		<p class="aboutUs-HeaderLine">Elena Plakolb
-		<img id="aboutUs-Clyde" src="imgs/Clyde.png" alt="Clyde">
+		<img id="aboutUs-Clyde" src="../img/Clyde.png" alt="Clyde">
 		<p>
 			"...waka, waka, waka, waka, waka, waka..."
 		</p>
@@ -59,17 +59,17 @@
 		<article class="footer">
 			<p class="footerP">
 				<a href="https://www.htl-leonding.at/">
-					<img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+					<img id="htlLeonding" src="../img/htlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
 				</a>
-				<img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+				<img class="theme" src="../img/themeButtons/button-dark.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
 				<br>
 			</p>
 			<br>
 		</article>
 		<div id="loadingScreen">
-			<img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+			<img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
 		</div>
-		<script src="src/scripts/loadingScreen.js"></script>
-		<script src="src/scripts/darkmode.js"></script>
+		<script src="scripts/loadingScreen.js"></script>
+		<script src="scripts/theme.js"></script>
 	</body>
 </html>

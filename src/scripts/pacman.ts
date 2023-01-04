@@ -126,9 +126,9 @@ function init(){
 
     drawPlayground(context,fields,playCount,count);
     let image = new Image(50,50);
-    image.src = "imgs/trophae.png";
+    image.src = "img/trophae.png";
     let image2 = new Image(50,50);
-    image2.src = "imgs/Blinky.png";
+    image2.src = "img/Blinky.png";
     let e = document.getElementById("count");
     e.innerHTML=`<p>Count: ${count}</p>`;
     context.font = "16px Arial";

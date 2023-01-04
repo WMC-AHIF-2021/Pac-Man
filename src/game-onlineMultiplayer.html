@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
     <link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
-    <link href="imgs/pac-man-logo-icon.ico" rel="shortcut icon">
+    <link href="../img/favicon.ico" rel="shortcut icon">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
     <button onclick="window.location.href = 'pacman-game.html';">GAME</button>
 </header>
 <br>
-<img class="header" id="headerImgGame" src="imgs/Header/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
+<img class="header" id="headerImgGame" src="../img/headers/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
 
 <label for="gameModes">
     <select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
@@ -37,14 +37,14 @@
     <div class="grid-item2-onlineMultiplayer">
         <canvas id="playground-onlineMultiplayer" style="margin-bottom: 100px" width="525" height="600">
             <div style="display: none">
-                <img id="imgPacManClose" src="imgs/Game/Pac-Man/Temp.png" alt="imgGame-close">
-                <img id="imgPacManRight" src="imgs/Game/Pac-Man/Right.png" alt="imgGame-open">
+                <img id="imgPacManClose" src="../img/Game/Pac-Man/Temp.png" alt="imgGame-close">
+                <img id="imgPacManRight" src="../img/Game/Pac-Man/Right.png" alt="imgGame-open">
 
-                <img id="imgPacManLeft" src="imgs/Game/Pac-Man/Left.png" alt="imgGame-open">
-                <img id="imgPacManUp" src="imgs/Game/Pac-Man/Up.png" alt="imgGame-open">
-                <img id="imgPacManDown" src="imgs/Game/Pac-Man/Down.png" alt="imgGame-open">
+                <img id="imgPacManLeft" src="../img/Game/Pac-Man/Left.png" alt="imgGame-open">
+                <img id="imgPacManUp" src="../img/Game/Pac-Man/Up.png" alt="imgGame-open">
+                <img id="imgPacManDown" src="../img/Game/Pac-Man/Down.png" alt="imgGame-open">
 
-                <img id="imgGhost" src="imgs/Blinky.png" alt="imgGame-ghost">
+                <img id="imgGhost" src="../img/Blinky.png" alt="imgGame-ghost">
             </div>
         </canvas>
     </div>
@@ -55,21 +55,21 @@
 <article class="footer">
     <p class="footerP">
         <a href="https://www.htl-leonding.at/">
-            <img id="htlLeonding" src="imgs/HtlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+            <img id="htlLeonding" src="../img/htlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
         </a>
         <button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
-        <img class="mode" src="imgs/Dark-LightMode/lightmode.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+        <img class="theme" src="../img/themeButtons/button-dark.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
     </p>
     <br>
 </article>
 <div id="loadingScreen">
-    <img id="loadingScreenImg" src="imgs/Inky.png" alt="loadingScreenImage">
+    <img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
 </div>
 <script src="https://pacman.the-changer.net/socket.io/socket.io.js"></script>
 
-<script src="src/scripts/loadingScreen.js"></script>
-<script src="src/scripts/darkmode.js"></script>
+<script src="scripts/loadingScreen.js"></script>
+<script src="scripts/theme.js"></script>
 <script src="build/onlineMultiplayer/game.js"></script>
-<script src="src/scripts/onlineMultiplayer/communication.js"></script>
+<script src="scripts/onlineMultiplayer/communication.js"></script>
 </body>
 </html>
