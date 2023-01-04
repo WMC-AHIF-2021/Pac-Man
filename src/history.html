@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>History - PacMan</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
-		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
-		<link href="../img/favicon.ico" rel="shortcut icon">
-	</head>
-	<body>
-		<header class="btn-group">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>History - PacMan</title>
+
+	<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
+	<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+
+	<link href="../img/favicon.ico" rel="icon">
+</head>
+<body>
+	<img class="header" id="headerImgHistory" src="../img/headers/PacmanHeaderHistory.jpg" alt="Header">
+	<header class="navbar">
 			<button onclick="window.location.href = 'index.html';">INDEX</button>
 			<button onclick="window.location.href = 'rules.html';">RULES</button>
-			<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
-			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
-			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
+			<button onclick="window.location.href = 'history.html';">HISTORY</button>
+			<button onclick="window.location.href = 'changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
+			<button onclick="window.location.href = 'game-singlePlayer.html';">GAME</button>
 		</header>
-		<img class="header" id="headerImgHistory" src="../img/headers/PacmanHeaderHistory.jpg" alt="Header">
 		<article>
 			<br>
             <p>Pac-Man is an arcade- and video game, which was released in 1980 by Namco.</p>
@@ -57,14 +60,15 @@
 		<article class="footer">
 			<p class="footerP">
 				<a href="https://www.htl-leonding.at/">
-					<img id="htlLeonding" src="../img/htlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+					<img id="htlLogo" src="../img/htlLogo/htlPacman-light.png" alt="Htl Logo">
 				</a>
 				<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
-				<img class="theme" src="../img/themeButtons/button-dark.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+				<img class="theme" src="../img/themeButtons/button-dark.png" onclick="enableDarkMode();" alt="imageLightMode" id="theme">
 				<br>
 			</p>
 			<br>
-		</article> 
+		</article>
+
 		<div id="loadingScreen">
 			<img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
 		</div>

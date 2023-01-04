@@ -1,24 +1,25 @@
 <html class="bg" lang="en">
 <head lang="en">
-	<title>Singleplayer - PacMan</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Singleplayer - PacMan</title>
 
 	<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
 	<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+
 	<link href="../img/favicon.ico" rel="shortcut icon">
-	<script type="module" src="build/pacman.js"></script>
 </head>
 <body>
 <div id="bgDarkener"></div>
-<header class="btn-group">
+<header class="navbar">
+	<img class="header" id="headerImgGame" src="../img/headers/game/headerGame-light.jpg" style="width: 100%;" alt="image header">
 	<button onclick="window.location.href = 'index.html';">INDEX</button>
 	<button onclick="window.location.href = 'rules.html';">RULES</button>
-	<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
-	<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
-	<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
+	<button onclick="window.location.href = 'history.html';">HISTORY</button>
+	<button onclick="window.location.href = 'changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
+	<button onclick="window.location.href = 'game-singlePlayer.html';">GAME</button>
 </header>
 <br>
-<img class="header" id="headerImgGame" src="../img/headers/PacmanHeaderGame.jpg" style="width: 100%;" alt="image header">
 <div id="mobileBlocker">
 	<label for="gameModes">
 		<select name="gameMode" id="gameModes" onchange="window.location.href=this.value">
@@ -54,10 +55,10 @@
 		<p class="footerP">
 			<br>
 			<a href="https://www.htl-leonding.at/">
-				<img id="htlLeonding" src="../img/htlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
+				<img id="htlLogo" src="../img/htlLogo/htlPacman-light.png" alt="Htl Logo">
 			</a>
 			<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
-			<img class="theme" src="../img/themeButtons/button-dark.png" onclick="switchToDarkmode();" alt="imageLightMode" id="mode">
+			<img class="theme" src="../img/themeButtons/button-dark.png" onclick="enableDarkMode();" alt="imageLightMode" id="theme">
 		</p>
 		<br>
 	</article>

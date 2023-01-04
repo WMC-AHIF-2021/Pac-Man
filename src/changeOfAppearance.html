@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Change of Appearance - PacMan</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
-		<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
-		<link href="../img/favicon.ico" rel="shortcut icon">
-	</head>
-	<body>
-		<header class="btn-group">
-			<button onclick="window.location.href = 'index.html';">INDEX</button>
-			<button onclick="window.location.href = 'rules.html';">RULES</button>
-			<button onclick="window.location.href = 'pacman-history.html';">HISTORY</button>
-			<button onclick="window.location.href = 'pacman-changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
-			<button onclick="window.location.href = 'pacman-game.html';">GAME</button>
-		</header>
-		<br>
-		<img class="header" id="headerImgCoa" src="../img/headers/PacmanHeaderCOA.jpg" alt="Header">
-		<article>
-			<h2>Then vs Now</h2>
-			<p>
-				When someone talks about Pacman today, everyone knows that this yellow circle is meant where a piece is missing. 
-				In the past, it was not a yellow circle but a white one. Also, because the resolution wasn’t as good as it is now, 
-				in the old version everything looked a little bit edgy and not as colorful as today, but it was still one of the 
-				most popular games back then. Nowadays with today‘s technology, the game is much more elaborated, so you have way 
-				better shapes and you don’t see the pixels as strong anymore. For example you can see two pictures one from the 
-				old Version and one from the new Version. Also there are a lot more than two Versions existing for example the 
-				Championship edition or the “Ms. Pacman” edition.
-			</p>
-			<img src="../img/pacman-level-orginal.png" alt="old version" style="width: 400px; border: 2px solid white">
-			<img src="../img/pacman-level.png" alt="new version" style="height: 225px; margin-left: 20px; border: 2px solid white">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-			<h2>Championship Edition</h2>
-			<p>
-				The championship Version was especially designed for the Event and you only was able to play it while the
-				championship, as a participant. The design for the championship was a highlight of Pacman because it was very
-				special. It looked more colorful because it had very bright and a lot of different colors, instead of the normal
-				blue or red lines as walls. Also when your Pacman has eaten all dots on one half there will pop up a special item
-				on the other half, so you have to eat this item, to get dots on the other half again. Because of that you could
-				score until it is too fats and you die.
-				Now you can’t play this version anymore, you only can play the original or the “Ms. Pacman”.
-			</p>
-			<img src="../img/pacman-level-new.jpg" alt="ChampionshipVersion" style="width: 400px;  border: 2px solid white">
+	<title>Change of Appearance - PacMan</title>
 
-			<h2>"Ms. Pacman" Edition</h2>
-			<div class="grid-container-COA-MissPacMan">
-				<div class="gridCOA-MissPacMan-item1-img">
-					<img class="changeOA" src="../img/pacman-level-mspacman.png" alt="MsPacman" style="width: 150px;  border: 2px solid white">
-				</div>
-				<div class="gridCOA-MissPacMan-item2-text">
-					Here is a comparison between the two most popular versions. The original Pacman version and the Ms. Pacman version.
-					The first thing you will see, is that the yellow circle now has a red bow and a kiss mouth. In contrast to the
-					original version, Ms. Pacman has four different labyrinths, which are displayed in different colors, and the walls
-					are also filled with color instead of just having a border. In addition, the fruits not only appear at certain
-					places, but are found at random on the whole field, as they change their position. The music and sound effects were
-					also changed.
-				</div>
+	<link rel="stylesheet" href="css/stylesheet.css" id="styles"/>
+	<link rel="stylesheet" href="css/loadingScreen.css" id="loadingScreenStyles">
+
+	<link href="../img/favicon.ico" rel="icon">
+</head>
+<body>
+	<img class="header" id="headerImgCoa" src="../img/headers/coa/headerCOA-light.jpg" alt="Header">
+	<header class="navbar">
+		<button onclick="window.location.href = 'index.html';">INDEX</button>
+		<button onclick="window.location.href = 'rules.html';">RULES</button>
+		<button onclick="window.location.href = 'history.html';">HISTORY</button>
+		<button onclick="window.location.href = 'changeOfAppearance.html';">CHANGE OF APPEARANCE</button>
+		<button onclick="window.location.href = 'game-singlePlayer.html';">GAME</button>
+	</header>
+	<br>
+
+	<article>
+		<h2>Then vs Now</h2>
+		<p>
+			When someone talks about Pacman today, everyone knows that this yellow circle is meant where a piece is missing.
+			In the past, it was not a yellow circle but a white one. Also, because the resolution wasn’t as good as it is now,
+			in the old version everything looked a little bit edgy and not as colorful as today, but it was still one of the
+			most popular games back then. Nowadays with today‘s technology, the game is much more elaborated, so you have way
+			better shapes and you don’t see the pixels as strong anymore. For example you can see two pictures one from the
+			old Version and one from the new Version. Also there are a lot more than two Versions existing for example the
+			Championship edition or the “Ms. Pacman” edition.
+		</p>
+		<img src="../img/pacman-level-orginal.png" alt="old version" style="width: 400px; border: 2px solid white">
+		<img src="../img/pacman-level.png" alt="new version" style="height: 225px; margin-left: 20px; border: 2px solid white">
+
+		<h2>Championship Edition</h2>
+		<p>
+			The championship Version was especially designed for the Event and you only was able to play it while the
+			championship, as a participant. The design for the championship was a highlight of Pacman because it was very
+			special. It looked more colorful because it had very bright and a lot of different colors, instead of the normal
+			blue or red lines as walls. Also when your Pacman has eaten all dots on one half there will pop up a special item
+			on the other half, so you have to eat this item, to get dots on the other half again. Because of that you could
+			score until it is too fats and you die.
+			Now you can’t play this version anymore, you only can play the original or the “Ms. Pacman”.
+		</p>
+		<img src="../img/pacman-level-new.jpg" alt="ChampionshipVersion" style="width: 400px;  border: 2px solid white">
+
+		<h2>"Ms. Pacman" Edition</h2>
+		<div class="grid-container-COA-MissPacMan">
+			<div class="gridCOA-MissPacMan-item1-img">
+				<img class="changeOA" src="../img/pacman-level-mspacman.png" alt="MsPacman" style="width: 150px;  border: 2px solid white">
 			</div>
-
-			<br>
-		</article>
-		<article class="footer">
-			<p class="footerP">
-				<a href="https://www.htl-leonding.at/">
-					<img id="htlLeonding" src="../img/htlLogo/HtlLogo-PacmanLight.png" alt="Htl Logo">
-				</a>
-				<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
-				<img class="theme" src="../img/themeButtons/button-dark.png" alt="Mode" onclick="switchToDarkmode();" id="mode">
-				<br>
-			</p>
-			<br>
-		</article>
-		<div id="loadingScreen">
-			<img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
+			<div class="gridCOA-MissPacMan-item2-text">
+				Here is a comparison between the two most popular versions. The original Pacman version and the Ms. Pacman version.
+				The first thing you will see, is that the yellow circle now has a red bow and a kiss mouth. In contrast to the
+				original version, Ms. Pacman has four different labyrinths, which are displayed in different colors, and the walls
+				are also filled with color instead of just having a border. In addition, the fruits not only appear at certain
+				places, but are found at random on the whole field, as they change their position. The music and sound effects were
+				also changed.
+			</div>
 		</div>
-		<script src="scripts/loadingScreen.js"></script>
-		<script src="scripts/theme.js"></script>
-	</body>
+
+		<br>
+	</article>
+
+	<article class="footer">
+		<p class="footerP">
+			<a href="https://www.htl-leonding.at/">
+				<img id="htlLogo" src="../img/htlLogo/htlPacman-light.png" alt="Htl Logo">
+			</a>
+			<button id="aboutUs" onclick="window.location.href = 'aboutUs.html'">About Us</button>
+			<img class="theme" src="../img/themeButtons/button-dark.png" alt="Mode" onclick="enableDarkMode();" id="theme">
+			<br>
+		</p>
+		<br>
+	</article>
+
+	<div id="loadingScreen">
+		<img id="loadingScreenImg" src="../img/Inky.png" alt="loadingScreenImage">
+	</div>
+	<script src="scripts/loadingScreen.js"></script>
+	<script src="scripts/theme.js"></script>
+</body>
 </html>
